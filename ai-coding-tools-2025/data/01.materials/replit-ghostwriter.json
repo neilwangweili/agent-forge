@@ -1,0 +1,32 @@
+{
+  "name": "Replit Ghostwriter",
+  "developer": "Replit",
+  "release_date": "2022 (持续更新)",
+  "official_website": "https://replit.com",
+  "category": "代码补全/AI 助手 (云端 IDE 集成)",
+  "core_features": [
+    "Complete Code - 自动补全式代码建议",
+    "Generate Code - 根据描述生成代码",
+    "Explain Code - 逐步解释代码",
+    "Edit/Transform Code - 根据描述修改代码",
+    "Ghostwriter Chat - IDE 内聊天功能"
+  ],
+  "target_users": "在线编程用户、学习者、快速原型开发者",
+  "tech_stack": {
+    "ai_model": "专有 AI 模型",
+    "architecture": "云端 IDE（Replit）原生集成，云端处理"
+  },
+  "pricing": {
+    "model": "闭源/商业",
+    "type": "付费订阅（可通过 Cycles 解锁）",
+    "price_range": "1,000 Cycles/月（约 $10 USD/月），或通过 Cycles 在任何计划上解锁"
+  },
+  "user_feedback": "Replit Ghostwriter 是与 Replit 云端 IDE 深度集成的 AI 助手，特别适合在线编程、快速原型开发和学习场景。其独特之处在于完全基于浏览器的工作流，无需本地安装。Ghostwriter 提供了从代码补全到生成、解释、编辑的全方位功能，消除了标签页切换的需要。支持多种编程语言（HTML, CSS, Python, Ruby, JavaScript, TypeScript, C++, JSON 等）。Cycles 机制允许用户灵活解锁功能，即使在免费计划上也能使用 Ghostwriter。",
+  "recent_updates": "Replit Ghostwriter 持续更新其 AI 功能套件。目前包含五大核心功能：Complete Code（旗舰功能，提供自动补全式建议）、Generate Code（根据需求生成代码）、Explain Code（逐步解释代码逻辑）、Edit/Transform Code（根据描述重写代码块）和 Ghostwriter Chat（提升生产力的聊天功能）。定价为 1,000 Cycles/月（约 $10 USD），Cycles 是虚拟代币，可用于解锁特定功能而无需升级到更高计划。这种灵活的定价模式使用户能够在免费计划上通过购买 Cycles 使用 Ghostwriter。",
+  "data_sources": [
+    "https://replit.com",
+    "https://blog.replit.com/ghostwriter",
+    "https://www.toolsforhumans.ai/ai-tools/replit-ghostwriter",
+    "https://docs.replit.com/power-ups/ghostwriter/copilot-vs-ghostwriter"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Google Gemini Code Assist",
+  "developer": "Google",
+  "release_date": "2024 (GA)",
+  "official_website": "https://codeassist.google/",
+  "category": "代码补全/AI 助手",
+  "core_features": [
+    "基于 Gemini LLM 的代码生成和补全",
+    "支持多种 IDE（VS Code, JetBrains, Android Studio）",
+    "与 Google Cloud 服务深度集成（Firebase, BigQuery, Colab）",
+    "企业版支持基于私有代码库的定制化",
+    "超高的月度代码补全限额"
+  ],
+  "target_users": "个人开发者、企业团队、Google Cloud 用户",
+  "tech_stack": {
+    "ai_model": "Google Gemini LLM（针对代码优化）",
+    "architecture": "云端处理，IDE 插件集成"
+  },
+  "pricing": {
+    "model": "闭源/商业",
+    "type": "Freemium",
+    "price_range": "免费版（个人，180,000次代码补全/月）; Standard $299/年; Enterprise $19/用户/月（2025年3月31日前促销价，原价$45/月）"
+  },
+  "user_feedback": "Google Gemini Code Assist 在 2024 年全面上市，以其极其慷慨的免费额度（18 万次代码补全/月）和与 Google Cloud 生态的深度集成吸引用户。企业版提供基于私有代码库的定制能力，这对大型组织特别有价值。Google 采取了激进的定价策略，免费版对个人开发者开放高月度限额，企业版促销价也极具竞争力（$19/月 vs 原价 $45/月）。这显示出 Google 在 AI 编程工具市场的战略重视。",
+  "recent_updates": "2024 年，Google Gemini Code Assist 正式全面上市（GA），这是 Google 使用其前沿 Gemini LLM 优化代码生成的解决方案。免费版向个人开发者提供高达 180,000 次代码补全/月的慷慨额度，远超竞争对手。企业版在 2025 年 3 月 31 日前提供促销定价 $19/用户/月（原价 $45/月）。企业版增强功能包括基于私有源代码库的定制化，以及与 Firebase、BigQuery 和 Colab Enterprise 等 Google Cloud 服务的集成。支持的 IDE 包括 VS Code、JetBrains 系列、Android Studio、Cloud Shell 和 Cloud Workstations。",
+  "data_sources": [
+    "https://codeassist.google/",
+    "https://developers.google.com/gemini-code-assist/docs/overview",
+    "https://cloud.google.com/blog/products/application-development/introducing-gemini-code-assist-enterprise",
+    "https://venturebeat.com/programming-development/google-makes-gemini-code-assist-free"
+  ]
+}

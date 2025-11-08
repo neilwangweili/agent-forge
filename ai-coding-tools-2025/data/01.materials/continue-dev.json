@@ -1,0 +1,32 @@
+{
+  "name": "Continue.dev",
+  "developer": "Continue (开源社区)",
+  "release_date": "2023 (持续开发)",
+  "official_website": "https://www.continue.dev",
+  "category": "AI 编程助手 (开源)",
+  "core_features": [
+    "完全开源的 AI 代码助手",
+    "支持任意 AI 模型（开源或商业）",
+    "CLI 工具支持 TUI 模式和 Headless 模式",
+    "后台代理可在几秒内启动（GitHub, Sentry, Snyk, Linear 等集成）",
+    "本地部署支持，完全离线运行"
+  ],
+  "target_users": "注重隐私的开发者、企业、开源爱好者",
+  "tech_stack": {
+    "ai_model": "模型无关（支持任意开源或商业 LLM，包括本地 Ollama 模型）",
+    "architecture": "本地或云端灵活部署，CLI + IDE 插件（VS Code, JetBrains）"
+  },
+  "pricing": {
+    "model": "开源",
+    "type": "免费",
+    "price_range": "完全免费（开源）"
+  },
+  "user_feedback": "Continue.dev 是领先的开源 AI 代码助手，其核心优势是完全的灵活性和隐私控制。用户可以连接任何模型，无论是开源的 Ollama、Llama，还是商业的 GPT-4、Claude。支持在本地离线环境运行，这对于有严格数据安全要求的企业特别重要。2024 年与 Codeanywhere 的集成使 AI 编码辅助更加便捷。Continue.dev 的可定制性极高，允许用户自定义工作流、连接自己的工具和服务。作为开源项目，它在隐私保护方面具有天然优势。",
+  "recent_updates": "2024 年，Continue.dev 持续发展其开源生态系统。与 Codeanywhere 的集成代表了一个重大合作，使开源 AI 编码辅助通过云端 IDE 变得更加便捷。Continue.dev 现在支持在 TUI 模式下作为编程代理使用，或在 Headless 模式下运行后台代理。后台代理可以在几秒内启动，并提供与 GitHub、Sentry、Snyk、Linear 等服务的开箱即用集成。通过 Ollama 部署在本地或远程服务器上，可以完全基于自己的需求运行代码补全和聊天体验。Continue.dev 可在 Visual Studio Marketplace 和 GitHub 上获取，持续接收社区贡献和更新。",
+  "data_sources": [
+    "https://www.continue.dev",
+    "https://github.com/continuedev/continue",
+    "https://codeanywhere.com/blog/continue-dev-ai-coding-assistance-made-seamless",
+    "https://ollama.com/blog/continue-code-assistant"
+  ]
+}

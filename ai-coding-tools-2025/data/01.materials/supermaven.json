@@ -1,0 +1,32 @@
+{
+  "name": "Supermaven",
+  "developer": "Jacob Jackson (TabNine 创始人)",
+  "release_date": "2024",
+  "official_website": "https://supermaven.com",
+  "category": "代码补全",
+  "core_features": [
+    "超大上下文窗口（免费版 300,000 tokens，Pro 版 1,000,000 tokens）",
+    "极快的响应速度（平均延迟约 250ms，比竞争对手快 3 倍）",
+    "专有 Babble 神经网络架构",
+    "支持 VS Code, JetBrains IDEs, Neovim",
+    "聊天功能支持 GPT-4o, Claude 3.5 Sonnet 等模型"
+  ],
+  "target_users": "需要处理大型代码库的开发者",
+  "tech_stack": {
+    "ai_model": "专有 Babble 架构 + 多模型聊天支持（GPT-4o, Claude 3.5 Sonnet, GPT-4）",
+    "architecture": "云端处理，IDE 插件集成"
+  },
+  "pricing": {
+    "model": "Freemium",
+    "type": "免费 + 付费订阅",
+    "price_range": "免费版 $0/月（300k token 上下文）; Pro $10/月（1M token 上下文，$5/月聊天额度）"
+  },
+  "user_feedback": "Supermaven 在 2024 年推出后迅速引起关注，其最大卖点是超大的上下文窗口和极快的响应速度。免费版提供 30 万 token 上下文窗口，这在保持与 4000 token Transformer 相同成本和延迟的情况下实现，是一项技术突破。响应速度比 GitHub Copilot 快近 3 倍，平均延迟仅 250ms。Pro 版更是提供 100 万 token 上下文窗口，这使得 Supermaven 在处理大型代码库时具有显著优势。由 TabNine 创始人打造的背景也为其技术实力背书。",
+  "recent_updates": "Supermaven 于 2024 年正式推出，作为'首个拥有 30 万 token 上下文窗口的代码补全工具'亮相。其专有的 Babble 神经网络架构能够在保持低延迟的同时处理超大上下文。Pro 版提供 100 万 token 上下文窗口、多模型支持、代码风格适应和低延迟响应。聊天功能支持与 GPT-4o、Claude 3.5 Sonnet、GPT-4 等领先模型对话。定价极具竞争力，免费版功能已足够强大，Pro 版仅 $10/月。Supermaven 被描述为'最快的 copilot，拥有最长的上下文窗口'，定位为 GitHub Copilot 的免费替代品。",
+  "data_sources": [
+    "https://supermaven.com",
+    "https://supermaven.com/blog/introducing-supermaven",
+    "https://www.htmlallthethings.com/blog-posts/supermaven-the-free-github-copilot-alternative",
+    "https://aipure.ai/articles/supermaven-review-ai-powered-code-completion-tool"
+  ]
+}

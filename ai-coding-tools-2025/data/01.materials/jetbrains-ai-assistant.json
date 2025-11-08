@@ -1,0 +1,32 @@
+{
+  "name": "JetBrains AI Assistant",
+  "developer": "JetBrains",
+  "release_date": "2023 (持续更新)",
+  "official_website": "https://www.jetbrains.com/ai/",
+  "category": "代码补全/AI 助手",
+  "core_features": [
+    "AI 驱动的代码补全和生成",
+    "支持本地模型（通过 Ollama, LM Studio, llama.cpp, LiteLLM）",
+    "聊天模型选择（Google Gemini, OpenAI, 本地模型）",
+    "深度集成 JetBrains IDE 生态系统",
+    "代码解释、重构建议、提交消息生成"
+  ],
+  "target_users": "JetBrains IDE 用户、注重隐私的开发者",
+  "tech_stack": {
+    "ai_model": "多模型支持（Google Gemini, OpenAI, 本地模型通过 Ollama 等）",
+    "architecture": "云端和本地混合，IDE 原生集成"
+  },
+  "pricing": {
+    "model": "闭源/商业",
+    "type": "订阅",
+    "price_range": "包含在 JetBrains 订阅中（具体定价需查询 JetBrains 官网）"
+  },
+  "user_feedback": "JetBrains AI Assistant 为 JetBrains IDE 用户提供了原生的 AI 辅助体验。2024.3 版本的亮点是支持本地模型，用户可以通过 Ollama 等工具连接本地 LLM，这对需要更强隐私控制的用户特别有用。聊天模型选择功能允许用户在 Google Gemini、OpenAI 或本地模型之间切换，提供了高度的灵活性。对于已经深度使用 JetBrains 产品套件（IntelliJ IDEA, PyCharm, GoLand 等）的开发者来说，AI Assistant 是一个自然的选择。",
+  "recent_updates": "2024 年，JetBrains AI Assistant 经历了重大更新。2024.1 版本引入了本地 AI 模型支持，允许用户通过 Ollama 连接本地语言模型。2024.2 版本改进了代码补全和聊天功能。2024.3 版本（2024 年 11 月发布）进一步增强了模型选择功能，用户可以在聊天中选择 Google Gemini、OpenAI 或本地模型。支持的本地模型提供商包括 Ollama、LM Studio、llama.cpp 和 LiteLLM。IntelliJ IDEA 2024.3 允许在 AI 助手中使用本地语言模型，显著提升了隐私性和灵活性。",
+  "data_sources": [
+    "https://www.jetbrains.com/ai/",
+    "https://blog.jetbrains.com/ai/2024/11/jetbrains-ai-assistant-2024-3/",
+    "https://www.heise.de/en/news/JetBrains-IntelliJ-IDEA-2024-3-allows-local-language-models-in-the-AI-assistant-10035224.html",
+    "https://www.jetbrains.com/help/ai-assistant/use-custom-models.html"
+  ]
+}

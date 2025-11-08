@@ -1,0 +1,32 @@
+{
+  "name": "Sourcegraph Cody",
+  "developer": "Sourcegraph",
+  "release_date": "2023-12 (GA)",
+  "official_website": "https://sourcegraph.com/cody",
+  "category": "AI 编程助手/代码智能",
+  "core_features": [
+    "基于 Sourcegraph 代码图的上下文感知 AI 助手",
+    "智能代码搜索和导航",
+    "内联代码补全和编辑",
+    "代码库感知聊天功能",
+    "支持整个代码库的上下文理解"
+  ],
+  "target_users": "企业开发团队、大型代码库维护者",
+  "tech_stack": {
+    "ai_model": "Claude 3 系列（Haiku, Sonnet, Opus），免费版默认使用 Claude 3 Sonnet",
+    "architecture": "基于 Sourcegraph 代码图，云端处理，IDE 插件"
+  },
+  "pricing": {
+    "model": "开源 + 商业",
+    "type": "Freemium",
+    "price_range": "免费版（个人）; 企业版定制定价"
+  },
+  "user_feedback": "Sourcegraph Cody 的核心优势在于其基于 Sourcegraph 十年积累的代码图技术，能够提供真正的代码库级别的上下文理解。这使得 Cody 在处理大型复杂代码库时表现出色，超越了仅基于局部代码片段的工具。2024 年集成 Claude 3 Sonnet 后，代码插入率提升约 75%，聊天和命令响应速度是前代的两倍。Cody 的智能代码搜索功能可以绕过繁琐的关键词试错搜索，直接找到相关的符号或方法调用。",
+  "recent_updates": "2024 年，Sourcegraph 将整个 Claude 3 模型系列（Haiku、Sonnet、Opus）提供给所有 Cody 计划的开发者，免费版默认使用 Claude 3 Sonnet。这一升级带来了显著的性能提升：代码插入率提升约 75%，响应速度翻倍。Cody 的能力不仅限于代码补全，还包括代码库感知的聊天、内联编辑，以及能够减轻开发者日常负担的工具集。Sourcegraph 与 Leidos 合作，将安全的 AI 驱动软件开发带给政府客户。Cody 的核心是 Sourcegraph 的代码图技术，这是过去十年构建的强大基础。",
+  "data_sources": [
+    "https://sourcegraph.com/cody",
+    "https://www.claude.com/customers/sourcegraph",
+    "https://docs.sourcegraph.com/cody",
+    "https://siliconangle.com/2023/12/14/sourcegraph-launches-ai-coding-assistant-cody-general-availability/"
+  ]
+}

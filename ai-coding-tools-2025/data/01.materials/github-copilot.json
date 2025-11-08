@@ -1,0 +1,32 @@
+{
+  "name": "GitHub Copilot",
+  "developer": "GitHub (Microsoft)",
+  "release_date": "2021-06-29 (GA: 2022-06)",
+  "official_website": "https://github.com/features/copilot",
+  "category": "代码补全/AI助手",
+  "core_features": [
+    "实时代码建议和自动补全",
+    "AI 聊天助手支持代码解释和生成",
+    "支持多种 IDE (VS Code, JetBrains, Visual Studio 等)",
+    "代码审查和安全漏洞扫描",
+    "基于 GitHub 海量代码库训练"
+  ],
+  "target_users": "专业开发者、团队和企业",
+  "tech_stack": {
+    "ai_model": "OpenAI Codex, GPT-4, Claude 3.7 Sonnet (2025年2月新增)",
+    "architecture": "云端处理，IDE 插件集成"
+  },
+  "pricing": {
+    "model": "闭源/商业",
+    "type": "付费订阅",
+    "price_range": "$10/月 (个人版) 或 $100/年，企业版定价另议，300次高级请求/月限制"
+  },
+  "user_feedback": "GitHub Copilot 是市场上最知名的 AI 编程工具，研究显示开发者使用后满意度提升 75%，编码速度最高提升 55%。用户普遍认可其代码建议质量，但对于复杂逻辑的理解有时存在局限。2025 年 2 月集成 Claude 3.7 Sonnet 后，代码质量进一步提升。整体评价为行业标杆产品。",
+  "recent_updates": "2025年2月24日，Microsoft 宣布 GitHub Copilot 支持 Claude 3.7 Sonnet 模型，这是 Anthropic 于同日发布的最新模型。这一整合使开发者能够在 GitHub Copilot 中使用多个领先的 AI 模型。此外，GitHub 持续优化代码补全算法，提升建议的准确性和上下文感知能力。根据 Google 数据，AI 在 2024 年生成了全球 41% 的代码（2560 亿行），GitHub Copilot 是主要贡献者之一。",
+  "data_sources": [
+    "https://zapier.com/blog/cursor-vs-copilot/",
+    "https://superframeworks.com/blog/best-ai-coding-tools",
+    "https://github.com/features/copilot",
+    "https://dredyson.com/cursor-vs-claude-code-vs-github-copilot-i-tested-every-ai-coding-tool-heres-the-best-value-in-2024/"
+  ]
+}

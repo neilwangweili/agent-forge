@@ -1,0 +1,32 @@
+{
+  "name": "Cursor",
+  "developer": "Anysphere",
+  "release_date": "2023",
+  "official_website": "https://cursor.com",
+  "category": "AI 编程助手",
+  "core_features": [
+    "基于 VS Code 的独立 AI-native IDE",
+    "对话式编程界面，支持多轮交互",
+    "Composer 功能支持多文件编辑",
+    "超强的代码上下文理解能力",
+    "智能代码补全和生成"
+  ],
+  "target_users": "专业开发者、创业公司、Fortune 500 企业",
+  "tech_stack": {
+    "ai_model": "多模型支持 (GPT-4, Claude 3.5 Sonnet 等)",
+    "architecture": "独立应用，基于 VS Code 构建，云端 AI 处理"
+  },
+  "pricing": {
+    "model": "闭源/商业",
+    "type": "Freemium (免费版 + 付费版)",
+    "price_range": "$20/月（Pro版），超过配额后按高级补全收费"
+  },
+  "user_feedback": "Cursor 在 2024 年成为开发者社区的明星产品，被 Product Hunt 评为 2024 年度产品。用户特别欣赏其流畅的对话式编程体验和强大的多文件编辑能力。Cursor 在 2024 年获得了超过 30,000 名用户，包括众多行业领先企业。然而，METR 研究显示经验丰富的开发者使用 AI 工具（包括 Cursor）时实际耗时增加 19%，尽管主观感觉更快。新手开发者则能获得 26% 的生产力提升。",
+  "recent_updates": "2024年8月，Anysphere（Cursor 背后的公司）获得由 Andreessen Horowitz 领投的 6000 万美元 A 轮融资，估值达到 90 亿美元，并筹集了 9 亿美元资金。根据 Sacra 研究机构估计，Cursor 在 2024 年 11 月的年度经常性收入（ARR）达到 6500 万美元，同比增长 6400%。Cursor 推出的新 Tab 模型使建议减少 21%，但接受率提高 28%，显著提升了用户体验。这使 Cursor 成为 2024-2025 年 AI 编程工具市场中增长最快的产品之一。",
+  "data_sources": [
+    "https://cursor.com",
+    "https://www.digitalapplied.com/blog/github-copilot-vs-cursor-vs-windsurf-ai-coding-assistants",
+    "https://www.producthunt.com/products/cursor",
+    "https://techfundingnews.com/top-10-ai-coding-startups-turning-code-into-cash-vc-biggest-investments-of-2024/"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Amazon Q Developer",
+  "developer": "Amazon Web Services (AWS)",
+  "release_date": "2024-04-30 (从 CodeWhisperer 演进而来)",
+  "official_website": "https://aws.amazon.com/q/developer/",
+  "category": "代码补全/AI 助手",
+  "core_features": [
+    "AI 驱动的代码建议和安全漏洞扫描",
+    "自主代理执行多步骤任务（如实现功能、重构、升级依赖）",
+    "代码转换功能（如 Java 版本升级）",
+    "AWS 集成（账户级查询、CLI 命令生成）",
+    "支持文档生成、代码审查和单元测试生成"
+  ],
+  "target_users": "AWS 开发者、企业团队",
+  "tech_stack": {
+    "ai_model": "Amazon 专有 AI 模型",
+    "architecture": "云端处理，IDE 插件（JetBrains, VS Code）和 CLI 代理"
+  },
+  "pricing": {
+    "model": "闭源/商业",
+    "type": "Freemium",
+    "price_range": "免费版（50次聊天交互/月，5个代理任务）; Pro $19/用户/月（更高使用限额，SSO，IP 赔偿）"
+  },
+  "user_feedback": "Amazon Q Developer 代表了 CodeWhisperer 的重大扩展，从简单的代码补全演进为具有自主代理能力的全面开发助手。用户特别欣赏其与 AWS 生态系统的深度集成，能够回答账户级问题和生成 CLI 命令。自主代理功能（如自动实现'添加到收藏'按钮）展示了强大的多步骤任务处理能力。对于深度使用 AWS 的团队来说，Q Developer 是一个自然的选择。",
+  "recent_updates": "2024 年 4 月 30 日，Amazon CodeWhisperer 正式成为 Amazon Q Developer 的一部分，标志着产品能力的重大扩展。新增的自主代理功能可以执行复杂的多步骤任务，如实现新功能、重构代码或升级依赖项。引入了新的代理命令：/doc（文档生成）、/review（代码审查）、/test（单元测试生成）。代码转换功能支持 Java 应用升级到最新语言版本。免费版提供 50 次交互/月，5 个代理任务，1000 行代码转换和 25 次 AWS 账户资源查询，Pro 版定价 $19/月。",
+  "data_sources": [
+    "https://aws.amazon.com/q/developer/",
+    "https://techcrunch.com/2024/04/30/amazon-codewhisperer-is-now-called-q-developer-and-is-expanding-its-functions/",
+    "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/service-rename.html",
+    "https://www.superblocks.com/blog/amazon-qdeveloper-pricing"
+  ]
+}

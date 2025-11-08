@@ -1,0 +1,32 @@
+{
+  "name": "Qodo (formerly CodiumAI)",
+  "developer": "Qodo",
+  "release_date": "2023 (更名为 Qodo: 2024-07)",
+  "official_website": "https://www.qodo.ai",
+  "category": "代码审查/测试生成/代码质量",
+  "core_features": [
+    "AI 驱动的代码审查和质量检查",
+    "自动化测试生成和覆盖率分析",
+    "Qodo Gen - IDE 代理用于代码和测试生成",
+    "Qodo Merge - PR 代理处理代码审查（日处理 20,000+ PR）",
+    "全代码库上下文理解，识别跨库问题"
+  ],
+  "target_users": "注重代码质量的开发团队和企业",
+  "tech_stack": {
+    "ai_model": "多 AI 代理系统（TestGPT, AlphaCodium, CoverAgent, PR-Agent）",
+    "architecture": "云端处理，IDE 插件（VS Code, JetBrains），企业平台"
+  },
+  "pricing": {
+    "model": "Freemium",
+    "type": "免费 + 企业版",
+    "price_range": "免费版（个人开发者）; 企业版定制定价"
+  },
+  "user_feedback": "Qodo 以其专注于代码质量和完整性在市场上独树一帜。不同于专注补全的工具，Qodo 强调代码审查、测试生成和质量验证。2024 年 7 月获得 4000 万美元 A 轮融资并更名为 Qodo，反映了其从单一工具到综合多代理 AI 平台的演进。Qodo Gen 已超过 100 万安装量（JetBrains 39.7 万，VS Code 51.2 万），Qodo Merge 日处理超过 20,000 个 PR。其全代码库上下文能力可以识别 AI copilot 遗漏的破坏性变更和跨库问题。",
+  "recent_updates": "2024 年是 Qodo 的转型之年。7 月完成 4000 万美元 A 轮融资并更名为 Qodo，强调'将质量置于 AI 辅助软件开发的核心'。产品时间线包括：TestGPT (2023-03)、AlphaCodium (2024-01)、CoverAgent (2024-05)、PR-Agent (2024-04)、Codiumate (2024-04) 和企业平台 (2024-07)。Qodo Gen（前 Codiumate）包含代码生成补全、AI 聊天、测试生成规划和覆盖率工具。Qodo 审查代理将 IDE 转变为智能审查环境，在开发者编码时分析代码、解释意图并验证质量。2024 年，Qodo 从单一工具成长为全面的多代理 AI 平台。",
+  "data_sources": [
+    "https://www.qodo.ai",
+    "https://www.qodo.ai/blog/2024-qodo-recap-in-ai-coding/",
+    "https://www.producthunt.com/products/codiumai",
+    "https://skywork.ai/skypage/en/Qodo-(Codium-AI)-Review-2025:-The-Ultimate-Guide-to-AI-Code-Integrity/1975032725448093696"
+  ]
+}
