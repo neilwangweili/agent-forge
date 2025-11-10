@@ -1,0 +1,117 @@
+{
+  "name": "微服务架构",
+  "aliases": ["Microservices", "Microservice Architecture"],
+  "origin": {
+    "proposer": "由 Netflix、Amazon 等公司实践推广,Martin Fowler 和 James Lewis 于 2014 年系统阐述",
+    "year": 2014,
+    "references": [
+      "https://martinfowler.com/articles/microservices.html",
+      "https://microservices.io/patterns/microservices.html",
+      "https://medium.com/design-microservices-architecture-with-patterns"
+    ]
+  },
+  "problem_solved": [
+    "单体应用难以扩展的问题,无法针对不同模块独立扩展",
+    "团队协作困难,大型团队在同一代码库上开发导致频繁冲突",
+    "技术栈锁定,整个应用必须使用相同的技术栈",
+    "部署风险高,小改动也需要重新部署整个应用",
+    "故障隔离差,一个模块的问题可能导致整个系统崩溃"
+  ],
+  "thoughts": [
+    "Conway 定律的应用:系统架构应反映组织结构,每个团队负责独立的服务",
+    "单一职责原则在架构层面的体现:每个服务专注于一个业务能力",
+    "去中心化治理:允许不同服务使用不同的技术栈和数据存储",
+    "演进式设计:系统可以逐步演进,替换单个服务而不影响整体",
+    "服务自治:每个服务独立部署、扩展和演进"
+  ],
+  "implementation_overview": "微服务架构将应用拆分为一组小型、独立部署的服务,每个服务运行在自己的进程中,通过轻量级机制(通常是 HTTP REST API 或消息队列)通信。每个服务围绕特定业务能力构建,可以由独立团队开发和维护。服务之间通过明确定义的 API 边界通信,每个服务拥有自己的数据库(Database per Service 模式),确保松耦合。部署形态为多个独立的服务实例,可以独立扩展和部署。",
+  "tech_stack": [
+    "API Gateway: Kong, AWS API Gateway, Nginx",
+    "服务注册与发现: Consul, Eureka, Etcd",
+    "配置中心: Spring Cloud Config, Consul",
+    "服务间通信: REST, gRPC, Message Queue (Kafka, RabbitMQ)",
+    "容器化: Docker, Kubernetes",
+    "服务网格: Istio, Linkerd",
+    "分布式追踪: Jaeger, Zipkin",
+    "断路器: Hystrix, Resilience4j",
+    "Saga 模式: Temporal, Axon Framework"
+  ],
+  "category": ["分布式"],
+  "when_to_use": [
+    "大型团队(50人以上)需要并行开发",
+    "不同模块有显著不同的扩展需求",
+    "需要技术异构性,不同服务使用不同技术栈",
+    "发布频率高且不同服务发布周期不同",
+    "组织结构支持,有多个独立的产品团队",
+    "平台能力成熟: CI/CD、容器化、可观测性、服务治理"
+  ],
+  "when_not_to_use": [
+    "团队规模小(< 20人),管理开销大于收益",
+    "业务复杂度低,主要是 CRUD 操作",
+    "平台能力不足,缺乏容器化、CI/CD、监控等基础设施",
+    "数据一致性要求极高,难以接受最终一致性",
+    "网络延迟敏感的场景",
+    "初创阶段,业务模型尚未稳定"
+  ],
+  "tradeoffs": {
+    "pros": [
+      "独立部署:每个服务可以独立发布,降低部署风险",
+      "独立扩展:可以针对高负载服务单独扩展,资源利用更高效",
+      "技术异构:不同服务可以使用最适合的技术栈",
+      "团队自治:团队可以独立工作,减少协调成本",
+      "故障隔离:单个服务故障不会导致整个系统崩溃",
+      "容易理解:每个服务规模小,逻辑清晰"
+    ],
+    "cons": [
+      "分布式复杂度:需要处理网络延迟、故障、消息丢失等问题",
+      "数据一致性:跨服务事务需要使用 Saga 等复杂模式",
+      "运维成本高:需要管理大量服务实例,监控、日志、追踪复杂",
+      "测试复杂:集成测试需要启动多个服务",
+      "网络开销:服务间调用通过网络,性能不如进程内调用",
+      "分布式调试困难:问题排查需要跨多个服务追踪"
+    ]
+  },
+  "costs": {
+    "infra": "高。需要容器编排(Kubernetes)、服务网格、API Gateway、消息队列、分布式追踪、集中式日志等基础设施。",
+    "cognitive": "高。开发人员需要理解分布式系统的复杂性,包括 CAP 定理、最终一致性、分布式事务、服务发现等概念。",
+    "ops": "非常高。需要管理大量服务实例,部署、监控、故障排查的复杂度显著增加。平均每个微服务团队需要 1-2 名 SRE/DevOps 支持。"
+  },
+  "org_requirements": [
+    "团队规模: 至少 50 人以上,分为多个独立的产品团队",
+    "DevOps 文化: 每个团队负责服务的全生命周期(开发、测试、部署、运维)",
+    "平台团队: 需要专门的平台团队负责基础设施、CI/CD、服务治理",
+    "成熟的工程实践: 自动化测试、持续集成/部署、监控告警",
+    "清晰的服务边界: 需要投入时间进行领域建模和服务拆分"
+  ],
+  "case_studies": [
+    {
+      "org": "Netflix",
+      "summary": "从单体演进到微服务,管理超过 1000 个微服务,实现全球规模的流媒体服务。开发了 Hystrix、Eureka 等微服务工具。",
+      "link": "https://www.geeksforgeeks.org/system-design/system-design-netflix-a-complete-architecture/"
+    },
+    {
+      "org": "Uber",
+      "summary": "从单体架构演进到 500+ 微服务,支持快速业务扩张和技术创新。但也面临服务过度拆分的问题。",
+      "link": "https://medium.com/@kp9810113/the-architecture-pattern-that-scaled-netflix-amazon-and-uber"
+    },
+    {
+      "org": "Amazon",
+      "summary": "2000年代初期开始微服务转型,每个服务由独立的两个披萨团队(6-10人)负责,实现了大规模的技术创新。",
+      "link": "https://www.hys-enterprise.com/blog/why-and-how-netflix-amazon-and-uber-migrated-to-microservices"
+    }
+  ],
+  "recent_updates": "2016-2025 年间,微服务生态系统显著成熟。Kubernetes 成为事实标准的容器编排平台。服务网格(Service Mesh)如 Istio、Linkerd 解决了服务间通信的复杂性。Serverless 和函数即服务(FaaS)为微服务提供了更细粒度的部署选项。同时,行业开始反思'过度微服务化',模块化单体(Modular Monolith)重新受到关注。工作流编排框架(如 Temporal)使得 Saga 模式的实现更加简单。可观测性工具(如 Jaeger、Prometheus、Grafana)成为必备基础设施。",
+  "related_patterns": [
+    "API Gateway",
+    "Service Mesh",
+    "Database per Service",
+    "Saga Pattern",
+    "CQRS",
+    "Event Sourcing",
+    "Circuit Breaker",
+    "Service Discovery",
+    "Strangler Fig Pattern"
+  ],
+  "maturity_score": 5,
+  "evidence_confidence": "high"
+}

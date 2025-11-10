@@ -1,0 +1,27 @@
+{
+  "name": "CQRS",
+  "aliases": ["Command Query Responsibility Segregation", "命令查询职责分离"],
+  "origin": {
+    "proposer": "Greg Young, Udi Dahan",
+    "year": 2010,
+    "references": ["https://martinfowler.com/bliki/CQRS.html", "https://learn.microsoft.com/en-us/azure/architecture/patterns/cqrs"]
+  },
+  "problem_solved": ["读写模型需求不同,用同一模型难以优化", "复杂查询影响写入性能", "读写扩展需求不同"],
+  "thoughts": ["将读取和写入分离,使用不同的模型", "命令(Command)改变状态,查询(Query)返回数据", "读写模型可以独立优化和扩展"],
+  "implementation_overview": "将系统分为命令端和查询端。命令端处理写入操作,使用规范化的领域模型。查询端处理读取,使用反规范化的视图模型。两端通过事件同步数据。",
+  "tech_stack": ["Event Store", "Read Model Database", "Message Bus", "Projection"],
+  "category": ["分布式"],
+  "when_to_use": ["读写比例悬殊", "读写模型差异大", "需要独立扩展读写", "与事件溯源结合使用"],
+  "when_not_to_use": ["简单 CRUD", "读写模型相似", "团队不熟悉最终一致性"],
+  "tradeoffs": {
+    "pros": ["读写独立优化", "读写独立扩展", "查询模型专门优化", "与事件溯源自然契合"],
+    "cons": ["最终一致性", "代码复杂度增加", "运维复杂度增加", "学习曲线陡"]
+  },
+  "costs": {"infra": "中到高", "cognitive": "高", "ops": "中到高"},
+  "org_requirements": ["理解最终一致性", "事件驱动架构经验"],
+  "case_studies": [],
+  "recent_updates": "2016-2025年间,CQRS常与事件溯源、微服务结合使用。Axon Framework等工具简化了实施。",
+  "related_patterns": ["Event Sourcing", "EDA", "DDD"],
+  "maturity_score": 4,
+  "evidence_confidence": "high"
+}

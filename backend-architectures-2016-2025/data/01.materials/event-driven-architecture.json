@@ -1,0 +1,50 @@
+{
+  "name": "事件驱动架构",
+  "aliases": ["EDA", "Event-Driven Architecture"],
+  "origin": {
+    "proposer": "分布式系统实践逐步演进而来",
+    "year": 2000,
+    "references": [
+      "Enterprise Integration Patterns",
+      "https://martinfowler.com/articles/201701-event-driven.html"
+    ]
+  },
+  "problem_solved": [
+    "系统组件间紧耦合,难以独立演进",
+    "同步调用链路长,影响性能和可用性",
+    "难以构建响应式、弹性的系统",
+    "难以处理异步、最终一致性的场景"
+  ],
+  "thoughts": [
+    "组件通过事件异步通信,解耦生产者和消费者",
+    "事件是状态变化的记录,一经发生不可更改",
+    "订阅发布模式:生产者不知道消费者,消费者可以独立扩展",
+    "最终一致性:接受短暂的数据不一致,系统最终达到一致状态"
+  ],
+  "implementation_overview": "组件通过发布和订阅事件进行通信。事件生产者发布事件到事件总线(如 Kafka、RabbitMQ),消费者订阅感兴趣的事件并异步处理。事件包含足够的信息让消费者做出决策。支持多个消费者独立处理同一事件。",
+  "tech_stack": ["Kafka", "RabbitMQ", "AWS EventBridge", "Azure Event Hubs", "Google Pub/Sub"],
+  "category": ["分布式"],
+  "when_to_use": ["需要高度解耦", "需要处理大规模事件流", "需要构建响应式系统", "可以接受最终一致性"],
+  "when_not_to_use": ["需要强一致性", "业务逻辑简单", "团队不熟悉异步编程", "调试复杂度不可接受"],
+  "tradeoffs": {
+    "pros": ["高度解耦", "异步处理提高性能", "易于扩展", "支持多个消费者"],
+    "cons": ["最终一致性", "调试困难", "事件版本管理", "消息顺序保证复杂"]
+  },
+  "costs": {
+    "infra": "中到高。需要可靠的消息中间件、监控、追踪",
+    "cognitive": "高。需要理解异步编程、最终一致性、消息可靠性",
+    "ops": "中到高。需要监控消息积压、消费延迟、死信队列"
+  },
+  "org_requirements": ["异步编程经验", "消息中间件运维能力", "可观测性基础设施"],
+  "case_studies": [
+    {
+      "org": "Netflix",
+      "summary": "大规模使用事件驱动架构处理用户行为、推荐、计费等业务",
+      "link": ""
+    }
+  ],
+  "recent_updates": "2016-2025 年间,Kafka 成为事件流平台的事实标准。事件驱动架构与微服务、CQRS、事件溯源结合,成为构建大规模分布式系统的主流方式。",
+  "related_patterns": ["CQRS", "Event Sourcing", "Saga Pattern", "Microservices"],
+  "maturity_score": 5,
+  "evidence_confidence": "high"
+}

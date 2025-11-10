@@ -1,0 +1,93 @@
+{
+  "name": "六边形架构",
+  "aliases": ["Hexagonal Architecture", "Ports and Adapters", "端口与适配器"],
+  "origin": {
+    "proposer": "Alistair Cockburn",
+    "year": 2005,
+    "references": [
+      "https://alistair.cockburn.us/hexagonal-architecture",
+      "https://journal.optivem.com/p/hexagonal-architecture-ports-and-adapters",
+      "https://en.wikipedia.org/wiki/Hexagonal_architecture_(software)"
+    ]
+  },
+  "problem_solved": [
+    "业务逻辑与基础设施代码混在一起,难以测试和演进",
+    "传统分层架构中业务层依赖持久层,导致紧耦合",
+    "UI 代码、业务逻辑、数据库访问交织,难以替换技术栈",
+    "难以进行单元测试,必须依赖真实的数据库或外部服务",
+    "业务规则的表达被技术细节污染"
+  ],
+  "thoughts": [
+    "依赖反转原则(DIP)在架构层面的应用:业务逻辑不应依赖技术细节",
+    "应用核心(业务逻辑)应该是独立的,外部世界通过端口与之交互",
+    "端口定义了应用的边界,适配器实现了与外部系统的集成",
+    "测试优先:通过依赖反转,可以轻松替换真实依赖为测试替身",
+    "技术无关的业务逻辑:核心业务规则不应该知道使用的是 REST、gRPC、SQL 还是 NoSQL"
+  ],
+  "implementation_overview": "六边形架构将系统分为内部(应用核心)和外部(基础设施)两部分。应用核心包含业务逻辑,通过端口(Ports,即接口)暴露功能或声明依赖。外部系统通过适配器(Adapters)与端口交互。适配器分为两类:驱动适配器(Driving/Primary,如 REST Controller、消息监听器)调用应用核心;被驱动适配器(Driven/Secondary,如数据库访问、外部 API 调用)被应用核心调用。依赖方向始终是从外向内:适配器依赖端口,端口属于应用核心。这确保了业务逻辑的纯粹性和可测试性。",
+  "tech_stack": [
+    "依赖注入框架: Spring, NestJS, .NET Core",
+    "端口定义: Interface/Protocol",
+    "适配器实现: REST Controller, gRPC Service, Repository, Message Publisher",
+    "测试: Mock 框架,Test Containers"
+  ],
+  "category": ["端口驱动"],
+  "when_to_use": [
+    "业务逻辑复杂,需要频繁变更",
+    "需要高可测试性,单元测试覆盖率要求高",
+    "可能需要更换技术栈(如从 SQL 迁移到 NoSQL)",
+    "需要支持多种交互方式(REST、gRPC、消息队列等)",
+    "团队希望业务逻辑独立于框架和技术细节",
+    "长期维护的项目,需要为未来演进做准备"
+  ],
+  "when_not_to_use": [
+    "简单的 CRUD 应用,业务逻辑极少",
+    "团队对依赖反转、接口设计不熟悉",
+    "项目生命周期短,不需要长期演进",
+    "性能极度敏感,无法容忍抽象层的开销"
+  ],
+  "tradeoffs": {
+    "pros": [
+      "可测试性极高:业务逻辑可以在不依赖外部系统的情况下测试",
+      "技术无关:可以轻松替换数据库、框架、通信协议",
+      "清晰的边界:端口和适配器明确了系统边界",
+      "业务逻辑纯粹:不被技术细节污染",
+      "易于演进:新增交互方式只需新增适配器",
+      "支持并行开发:团队可以并行开发核心逻辑和适配器"
+    ],
+    "cons": [
+      "初始复杂度高:需要定义端口、实现适配器,代码量增加",
+      "学习曲线陡:团队需要理解依赖反转、端口与适配器的概念",
+      "过度工程风险:简单场景下可能过于复杂",
+      "性能开销:额外的抽象层可能带来轻微的性能损失",
+      "需要严格的架构治理:防止直接依赖绕过端口"
+    ]
+  },
+  "costs": {
+    "infra": "低。无特殊基础设施需求,标准的应用服务器和数据库即可。",
+    "cognitive": "中。开发人员需要理解依赖反转原则、端口与适配器的概念、接口设计。需要一定的学习时间。",
+    "ops": "低。运维复杂度与标准应用相同,无额外负担。"
+  },
+  "org_requirements": [
+    "团队对 SOLID 原则有较好理解",
+    "愿意投入时间进行接口设计和边界定义",
+    "代码审查机制,确保依赖方向正确",
+    "自动化测试文化"
+  ],
+  "case_studies": [
+    {
+      "org": "Netflix",
+      "summary": "部分微服务采用六边形架构,将业务逻辑与 Cassandra、Kafka 等基础设施解耦,提高了可测试性和演进性。",
+      "link": "https://netflixtechblog.com/"
+    }
+  ],
+  "recent_updates": "2016-2025 年间,六边形架构在 DDD 社区和微服务实践中广泛应用。与 Clean Architecture 经常被一起讨论,两者在依赖反转上的思想一致。越来越多的团队将六边形架构作为微服务内部架构的首选,确保每个服务的业务逻辑清晰可测。Spring、NestJS 等框架对依赖注入的良好支持降低了实施难度。架构测试工具(如 ArchUnit)帮助团队自动检查依赖方向是否正确。",
+  "related_patterns": [
+    "Clean Architecture",
+    "DDD",
+    "Dependency Inversion Principle",
+    "Onion Architecture"
+  ],
+  "maturity_score": 5,
+  "evidence_confidence": "high"
+}

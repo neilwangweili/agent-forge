@@ -1,0 +1,51 @@
+{
+  "name": "领域驱动设计",
+  "aliases": ["DDD", "Domain-Driven Design"],
+  "origin": {
+    "proposer": "Eric Evans",
+    "year": 2003,
+    "references": [
+      "Domain-Driven Design: Tackling Complexity in the Heart of Software (2003)",
+      "Implementing Domain-Driven Design (Vaughn Vernon, 2013)"
+    ]
+  },
+  "problem_solved": [
+    "业务复杂度无法有效治理,逻辑分散",
+    "贫血模型导致业务规则难以表达和维护",
+    "技术人员与业务专家沟通困难",
+    "大型系统缺乏清晰的边界划分"
+  ],
+  "thoughts": [
+    "业务复杂度应通过富领域模型来治理,而非通过技术手段",
+    "通用语言(Ubiquitous Language):开发团队和业务专家使用相同的语言",
+    "限界上下文(Bounded Context):明确模型的适用边界",
+    "战略设计:系统分解和边界定义",
+    "战术设计:领域对象建模(实体、值对象、聚合、领域服务)"
+  ],
+  "implementation_overview": "DDD 分为战略设计和战术设计两部分。战略设计通过限界上下文、上下文映射划分系统边界。战术设计通过实体、值对象、聚合、领域服务、仓储等模式构建富领域模型。聚合是一致性边界,聚合根负责维护不变量。领域事件用于聚合间通信。",
+  "tech_stack": ["DDD 框架: Axon Framework, EventFlow", "ORM: 支持聚合持久化", "事件总线"],
+  "category": ["领域中心"],
+  "when_to_use": ["业务复杂度高", "业务规则复杂且频繁变更", "长期维护项目", "团队有领域建模能力"],
+  "when_not_to_use": ["简单 CRUD 应用", "技术复杂度高但业务简单", "团队缺乏领域建模经验", "初创阶段业务模型未稳定"],
+  "tradeoffs": {
+    "pros": ["业务规则集中表达", "可维护性高", "与业务专家协作顺畅", "清晰的边界"],
+    "cons": ["学习曲线陡", "实施成本高", "需要持续领域建模", "可能过度设计"]
+  },
+  "costs": {
+    "infra": "低到中",
+    "cognitive": "高。需要理解聚合、实体、值对象、限界上下文等概念,需要领域建模能力",
+    "ops": "低到中"
+  },
+  "org_requirements": ["团队有领域建模经验或愿意学习", "业务专家深度参与", "持续的领域知识提炼"],
+  "case_studies": [
+    {
+      "org": "多家金融、电商企业",
+      "summary": "在订单、支付等复杂业务领域应用 DDD,有效治理业务复杂度",
+      "link": ""
+    }
+  ],
+  "recent_updates": "2016-2025 年间,DDD 在微服务拆分中广泛应用,限界上下文成为服务边界划分的重要依据。务实 DDD 兴起,不追求完整实施,而是选择性应用战术或战略模式。",
+  "related_patterns": ["CQRS", "Event Sourcing", "Hexagonal Architecture", "Saga Pattern"],
+  "maturity_score": 5,
+  "evidence_confidence": "high"
+}

@@ -1,0 +1,45 @@
+{
+  "name": "整洁架构",
+  "aliases": ["Clean Architecture", "Onion Architecture"],
+  "origin": {
+    "proposer": "Robert C. Martin (Uncle Bob)",
+    "year": 2012,
+    "references": [
+      "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html",
+      "Clean Architecture: A Craftsman's Guide to Software Structure and Design (2017)"
+    ]
+  },
+  "problem_solved": [
+    "业务逻辑与框架、UI、数据库紧密耦合",
+    "难以进行独立的单元测试",
+    "技术栈变更影响业务逻辑",
+    "业务规则难以复用"
+  ],
+  "thoughts": [
+    "依赖规则:依赖只能从外向内,内层不知道外层的存在",
+    "业务规则独立性:核心业务规则不依赖任何外部框架或工具",
+    "可测试性:业务逻辑可以在没有 UI、数据库、Web 服务器的情况下测试",
+    "框架独立:业务逻辑不应依赖框架的具体实现",
+    "UI 独立:UI 可以轻易改变而不影响系统其余部分"
+  ],
+  "implementation_overview": "整洁架构使用同心圆表示系统层次,从内到外分为:Entities(企业业务规则)、Use Cases(应用业务规则)、Interface Adapters(接口适配器)、Frameworks & Drivers(框架和驱动)。依赖方向严格从外向内。内层定义接口,外层实现接口。通过依赖注入,外层实例注入到内层使用。",
+  "tech_stack": ["依赖注入框架", "接口定义", "适配器模式"],
+  "category": ["端口驱动"],
+  "when_to_use": ["业务逻辑复杂", "长期维护项目", "需要高可测试性", "可能更换技术栈"],
+  "when_not_to_use": ["简单 CRUD 应用", "短期项目", "团队不熟悉依赖反转"],
+  "tradeoffs": {
+    "pros": ["业务逻辑纯粹", "高可测试性", "技术栈可替换", "清晰的层次边界"],
+    "cons": ["初始复杂度高", "代码量增加", "学习曲线陡", "可能过度设计"]
+  },
+  "costs": {
+    "infra": "低",
+    "cognitive": "中到高。需要理解依赖反转、分层设计、接口设计",
+    "ops": "低"
+  },
+  "org_requirements": ["团队对 SOLID 原则熟悉", "代码审查机制", "自动化测试文化"],
+  "case_studies": [],
+  "recent_updates": "2016-2025 年间,Clean Architecture 成为 DDD 和微服务社区的流行选择。与六边形架构、洋葱架构被视为同一思想的不同表达。",
+  "related_patterns": ["Hexagonal Architecture", "DDD", "Dependency Inversion Principle"],
+  "maturity_score": 5,
+  "evidence_confidence": "high"
+}
