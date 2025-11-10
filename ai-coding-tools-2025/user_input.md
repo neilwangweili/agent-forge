@@ -5,11 +5,13 @@ Please provide the following information, and the generator will generate your r
 ## Language Settings
 
 **Agent Blueprint Language**:
+
 ```
 中文
 ```
 
 **Report Output Language**:
+
 ```
 中文
 ```
@@ -19,11 +21,13 @@ Please provide the following information, and the generator will generate your r
 ## Research Project Basic Information
 
 **Project Identifier**:
+
 ```
 ai-coding-tools-2025
 ```
 
 **Research Topic and Core Questions**:
+
 ```
 我想研究 2024-2025 年 AI 编程工具的市场格局。
 
@@ -36,6 +40,7 @@ ai-coding-tools-2025
 ```
 
 **Preliminary Direction and Insights**:
+
 ```
 根据我的初步了解，AI 编程工具可能包括：
 - 代码补全类工具（如 GitHub Copilot）
@@ -51,6 +56,7 @@ ai-coding-tools-2025
 ## Phase One: Data Collection
 
 **Data Sources**:
+
 ```
 1. Product Hunt - 搜索 AI coding、AI programming 等关键词，找到相关工具
 2. GitHub Trending - 查看 AI 编程相关的热门项目
@@ -60,6 +66,7 @@ ai-coding-tools-2025
 ```
 
 **Data Collection Objectives**:
+
 ```
 对于每个 AI 编程工具，需要收集：
 - 基本信息：名称、开发商、发布时间
@@ -73,6 +80,7 @@ ai-coding-tools-2025
 ```
 
 **Data Collection Process Design**:
+
 ```
 并行收集多个数据源，然后去重合并：
 1. 同时从 5 个数据源收集信息
@@ -82,6 +90,7 @@ ai-coding-tools-2025
 ```
 
 **Data Storage Format**:
+
 ```
 JSON 格式，每个工具一个 JSON 文件，包含标准字段：
 {
@@ -98,6 +107,7 @@ JSON 格式，每个工具一个 JSON 文件，包含标准字段：
 ```
 
 **Existing Reference Materials**:
+
 ```
 无
 ```
@@ -107,6 +117,7 @@ JSON 格式，每个工具一个 JSON 文件，包含标准字段：
 ## Phase Two: Analysis
 
 **Analysis Methods**:
+
 ```
 1. 分类统计：
    - 按功能类别分类（代码补全、AI 助手、代码审查等）
@@ -127,6 +138,7 @@ JSON 格式，每个工具一个 JSON 文件，包含标准字段：
 ```
 
 **Analysis Process Design**:
+
 ```
 两阶段分析：
 1. 第一阶段：对每个工具进行分类标注，统计各类别的数量和分布
@@ -134,6 +146,7 @@ JSON 格式，每个工具一个 JSON 文件，包含标准字段：
 ```
 
 **Analysis Results Storage**:
+
 ```
 Markdown 文档，包含：
 - classification.md - 分类统计结果
@@ -147,11 +160,13 @@ Markdown 文档，包含：
 ## Phase Three: Report Generation
 
 **Report Format**:
+
 ```
 Markdown文档
 ```
 
 **Report Structure**:
+
 ```
 1. 执行摘要（1-2 页）
    - 研究背景
@@ -187,6 +202,7 @@ Markdown文档
 ```
 
 **Writing Style**:
+
 ```
 专业分析报告风格：
 - 语言：简洁、客观、专业
@@ -195,6 +211,7 @@ Markdown文档
 - 可视化：适当使用表格和分类展示
 - 洞察：不仅描述"是什么"，更要分析"为什么"和"意味着什么"
 - 受众：面向技术决策者和开发者
+- 风格：不要罗列bullet points，不像个文章的样子。除非必要，尽量不用bullet points，用通顺的段落来组织。平实准确简练，不要起高调，不要乱打比方，不要啰嗦讲废话。原则上一件事只讲一遍，不要反复重复
 
 参考风格：类似 Gartner 分析报告或 ThoughtWorks 技术雷达
 ```

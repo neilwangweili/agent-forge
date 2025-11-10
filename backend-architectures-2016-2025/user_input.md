@@ -5,11 +5,13 @@ Please provide the following information, and the generator will generate your r
 ## Language Settings
 
 **Agent Blueprint Language**:
+
 ```
 中文
 ```
 
 **Report Output Language**:
+
 ```
 中文
 ```
@@ -19,11 +21,13 @@ Please provide the following information, and the generator will generate your r
 ## Research Project Basic Information
 
 **Project Identifier**:
+
 ```
 backend-architectures-2016-2025
 ```
 
 **Research Topic and Core Questions**:
+
 ```
 研究近十年（约 2016-2025）后端各类架构设计及其差异。
 
@@ -40,6 +44,7 @@ backend-architectures-2016-2025
 ```
 
 **Preliminary Direction and Insights**:
+
 ```
 根据我的初步了解，主流的后端架构范式可能包括
 - 传统 MVC 架构
@@ -70,6 +75,7 @@ AI技术的显著发展也可能影响架构范式。
 ## Phase One: Data Collection
 
 **Data Sources**:
+
 ```
 1. 经典著作与论文：
    - 包括但不限于《Domain-Driven Design》, 《Clean Architecture》, 《Building Microservices》, 《Monolith to Microservices》
@@ -87,6 +93,7 @@ AI技术的显著发展也可能影响架构范式。
 ```
 
 **Data Collection Objectives**:
+
 ```
 对每种架构/组合收集：
 - 基本信息：名称、提出者/来源、出现时间
@@ -103,6 +110,7 @@ AI技术的显著发展也可能影响架构范式。
 ```
 
 **Data Collection Process Design**:
+
 ```
 并行抓取与去重合并：
 1. 按“架构范式”建立初始清单（不完全，可能有遗漏，需要你帮忙注意到缺失的架构范式）（MVC、Clean、DDD、Smart Domain、六边形、模块化单体、微服务、Serverless、EDA、CQRS/ES、微内核、BFF、Reactive/Actor）。
@@ -114,6 +122,7 @@ AI技术的显著发展也可能影响架构范式。
 ```
 
 **Data Storage Format**:
+
 ```
 JSON（每种架构或组合一个文件），包含标准字段：
 {
@@ -140,6 +149,7 @@ JSON（每种架构或组合一个文件），包含标准字段：
 ```
 
 **Existing Reference Materials**:
+
 ```
 无
 ```
@@ -149,6 +159,7 @@ JSON（每种架构或组合一个文件），包含标准字段：
 ## Phase Two: Analysis
 
 **Analysis Methods**:
+
 ```
 1. 分类矩阵：
    - 按范式分类
@@ -174,6 +185,7 @@ JSON（每种架构或组合一个文件），包含标准字段：
 ```
 
 **Analysis Process Design**:
+
 ```
 两阶段分析：
 1. 标注与统计：为每种架构进行分类标注、补齐字段与评分，产出分类分布与决策矩阵。
@@ -182,6 +194,7 @@ JSON（每种架构或组合一个文件），包含标准字段：
 ```
 
 **Analysis Results Storage**:
+
 ```
 Markdown 文档：
 - classification.md：架构家族与特征矩阵（含评分表）
@@ -196,11 +209,13 @@ Markdown 文档：
 ## Phase Three: Report Generation
 
 **Report Format**:
+
 ```
 Markdown文档
 ```
 
 **Report Structure**:
+
 ```
 1. 执行摘要（1-3 页）
    - 背景与范围（2016-2025）
@@ -238,6 +253,7 @@ Markdown文档
 ```
 
 **Writing Style**:
+
 ```
 专业分析报告风格：
 - 语言：简洁、客观、专业
@@ -246,6 +262,7 @@ Markdown文档
 - 可视化：适当使用表格和分类展示
 - 洞察：不仅描述"是什么"，更要分析"为什么"和"意味着什么"
 - 受众：面向技术决策者和开发者
+- 风格：不要罗列bullet points，不像个文章的样子。除非必要，尽量不用bullet points，用通顺的段落来组织。平实准确简练，不要起高调，不要乱打比方，不要啰嗦讲废话。原则上一件事只讲一遍，不要反复重复
 
 参考风格：类似 Gartner 分析报告或 ThoughtWorks 技术雷达
 ```
