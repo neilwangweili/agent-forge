@@ -1,0 +1,167 @@
+{
+  "topic": "传统软件开发方法论（瀑布模型等）",
+  "definition": "传统软件开发方法论主要指瀑布模型（Waterfall Model），是一种线性顺序的软件开发过程，将开发过程划分为需求分析、系统设计、实现、测试、部署和维护等严格分离的阶段。每个阶段完成后才能进入下一阶段，强调完整的文档和预先规划。",
+  "basic_info": {
+    "origin": "Winston Royce在1970年的论文中首次描述（虽然他本人批评了这种方法）",
+    "peak_period": "1970年代至2000年代早期主导软件工程",
+    "current_status": "仍在某些领域使用，但在软件开发领域已被敏捷方法论大量取代"
+  },
+  "core_characteristics": [
+    "线性顺序流程：需求→设计→实现→测试→部署，单向流动",
+    "阶段分离：每个阶段有明确的交付物和审批门槛",
+    "文档驱动：每个阶段产生大量文档，文档是阶段完成的标志",
+    "预先规划：在开始编码前完成所有需求和设计",
+    "变更困难：后期变更需求成本极高"
+  ],
+  "phases": [
+    {
+      "name": "需求分析（Requirements Analysis）",
+      "description": "收集和文档化所有需求",
+      "deliverable": "需求规格说明书（SRS）",
+      "duration": "通常数周到数月"
+    },
+    {
+      "name": "系统设计（System Design）",
+      "description": "基于需求设计系统架构和详细设计",
+      "deliverable": "设计文档、架构图",
+      "duration": "数周到数月"
+    },
+    {
+      "name": "实现（Implementation）",
+      "description": "根据设计文档编写代码",
+      "deliverable": "源代码",
+      "duration": "数月"
+    },
+    {
+      "name": "测试（Testing）",
+      "description": "对实现的系统进行测试",
+      "deliverable": "测试报告、缺陷列表",
+      "duration": "数周到数月"
+    },
+    {
+      "name": "部署（Deployment）",
+      "description": "将系统部署到生产环境",
+      "deliverable": "上线系统",
+      "duration": "数天到数周"
+    },
+    {
+      "name": "维护（Maintenance）",
+      "description": "修复缺陷和小的改进",
+      "deliverable": "补丁、更新",
+      "duration": "持续"
+    }
+  ],
+  "core_problems": [
+    "僵化性（Rigidity）：需求变更困难，后期变更成本指数增长",
+    "反馈延迟（Delayed Feedback）：客户直到测试阶段甚至部署后才看到产品，反馈周期长达数月到数年",
+    "风险后置（Late Risk Discovery）：重大问题往往在后期才被发现，此时修复成本极高",
+    "文档与代码脱节（Documentation-Code Mismatch）：文档往往与实际代码不一致，维护困难",
+    "价值交付慢（Slow Value Delivery）：客户需要等待整个周期才能获得价值",
+    "浪费（Waste）：大量时间用于编写可能过时的文档",
+    "低成功率：仅13%的项目成功，59%的项目失败（Standish Group 2020）"
+  ],
+  "disadvantages": [
+    "极低的成功率：仅13%的瀑布项目成功 vs 42%的敏捷项目成功",
+    "极高的失败率：59%的瀑布项目失败 vs 11%的敏捷项目失败",
+    "长反馈周期：数月到数年 vs 敏捷的2-4周",
+    "高变更成本：后期变更成本可能是早期的100倍以上",
+    "风险发现延迟：重大问题往往在后期才被发现",
+    "客户不满意：交付的产品往往不符合客户的实际需求（需求在项目期间已变化）",
+    "团队士气低：长周期、高压力、缺乏反馈导致团队倦怠",
+    "无法适应市场变化：长周期使产品上市时可能已过时"
+  ],
+  "comparison_with_agile": {
+    "metrics": [
+      {
+        "dimension": "项目成功率",
+        "waterfall": "13%",
+        "agile": "42%",
+        "difference": "敏捷高3倍",
+        "source": "Standish Group Chaos Report 2020"
+      },
+      {
+        "dimension": "项目失败率",
+        "waterfall": "59%",
+        "agile": "11%",
+        "difference": "瀑布高5倍",
+        "source": "Standish Group Chaos Report 2020"
+      },
+      {
+        "dimension": "反馈周期",
+        "waterfall": "数月到数年",
+        "agile": "2-4周",
+        "difference": "敏捷快10-50倍",
+        "source": "Industry Practice"
+      },
+      {
+        "dimension": "变更成本",
+        "waterfall": "后期变更成本极高（指数增长）",
+        "agile": "每个Sprint都可调整，成本可控",
+        "difference": "敏捷显著降低",
+        "source": "Agile vs Waterfall Research"
+      },
+      {
+        "dimension": "平均成功率（4个标准）",
+        "waterfall": "47%",
+        "agile": "88.2%",
+        "difference": "敏捷高近2倍",
+        "source": "Comparative Studies"
+      },
+      {
+        "dimension": "项目成功率（PWC 2017）",
+        "waterfall": "基线",
+        "agile": "高28%",
+        "difference": "+28%",
+        "source": "PWC Study 2017"
+      }
+    ]
+  },
+  "when_waterfall_might_work": [
+    "需求非常稳定且明确，几乎不会变化",
+    "技术非常成熟，风险极低",
+    "法规要求完整的预先文档（如某些军事、航空项目）",
+    "项目规模小且简单",
+    "团队对领域非常熟悉"
+  ],
+  "failure_cases": [
+    {
+      "organization": "Healthcare.gov",
+      "scenario": "美国医疗保险网站开发，采用传统瀑布模式",
+      "outcome": "2013年上线时严重故障，数月无法正常工作，成本超支，声誉受损",
+      "lessons": "需求复杂、技术栈新、缺乏迭代验证导致灾难性失败",
+      "source": "Public Domain Case Study"
+    },
+    {
+      "organization": "FBI Virtual Case File",
+      "scenario": "FBI案件管理系统，采用瀑布模型开发",
+      "outcome": "耗资1.7亿美元，历时多年，最终项目取消，零价值交付",
+      "lessons": "需求变化、技术复杂性、缺乏迭代反馈导致完全失败",
+      "source": "Public Domain Case Study"
+    }
+  ],
+  "why_agile_is_better": [
+    "拥抱变化：敏捷假设需求会变化，设计了应对机制；瀑布假设需求稳定，变化即灾难",
+    "早期价值交付：敏捷每个Sprint都交付可用增量；瀑布需要等待整个周期",
+    "早期风险发现：敏捷在迭代中早期发现问题；瀑布在后期才暴露问题",
+    "持续反馈：敏捷每2-4周获得反馈；瀑布数月到数年才获得反馈",
+    "适应性：敏捷能快速响应市场变化；瀑布僵化无法调整",
+    "团队士气：敏捷提供持续的小胜利和反馈；瀑布长周期高压力",
+    "客户满意度：敏捷让客户参与过程；瀑布客户只能等待"
+  ],
+  "tools_and_frameworks": [
+    "Microsoft Project（项目计划工具）",
+    "Gantt Chart（甘特图）",
+    "PERT Chart（项目评审技术图）",
+    "Requirements Management Tools（需求管理工具）",
+    "Document Management Systems（文档管理系统）"
+  ],
+  "references": [
+    "Standish Group Chaos Report 2020",
+    "Agile vs. Waterfall: Comparing Success Rates in Project Management",
+    "PWC Study 2017 - Agile Project Success Rates",
+    "Structured software development versus agile software development: a comparative analysis",
+    "Why Agile is Better than Waterfall (Based on Standish Group Chaos Report 2020)",
+    "Healthcare.gov Failure Case Study",
+    "FBI Virtual Case File Failure Analysis"
+  ]
+}

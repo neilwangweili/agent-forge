@@ -1,0 +1,212 @@
+{
+  "topic": "Smart Domain模式与小对象模式",
+  "definition": "Smart Domain模式（也称为Rich Domain Model，富领域模型）是一种将业务逻辑封装在领域对象中的设计模式，与贫血模型（Anemic Domain Model）相对。小对象模式（Tiny Types或Value Objects）是拒绝原始类型偏执（Primitive Obsession），用类型安全的小对象封装原始类型的模式。两者共同构成了面向对象设计的最佳实践，提升代码的类型安全性、可读性和可维护性。",
+  "basic_info": {
+    "rich_domain_origin": "Domain-Driven Design（Eric Evans, 2003）中系统化",
+    "anemic_model_criticism": "Martin Fowler在2003年将贫血模型命名为反模式",
+    "value_objects_origin": "Value Objects概念来自DDD，也是设计模式的一部分",
+    "primitive_obsession": "原始类型偏执被列为Code Smell（代码坏味道）"
+  },
+  "core_problem": "贫血模型和原始类型偏执的痛点：业务逻辑分散在服务层导致重复和不一致、原始类型缺乏业务语义和验证逻辑、代码可读性差（看到String不知道是什么）、容易出错（如将email当作name传递）、难以重构和维护。Smart Domain和Tiny Types通过封装解决这些问题。",
+  "anemic_domain_model": {
+    "definition": "贫血模型是指领域对象只包含数据（getter/setter），而业务逻辑都在服务层的反模式",
+    "characteristics": [
+      "领域对象只有属性和getter/setter",
+      "没有业务逻辑",
+      "像数据库表的映射",
+      "业务逻辑分散在服务层"
+    ],
+    "problems": [
+      "违反面向对象原则：数据和行为应该在一起",
+      "业务逻辑重复：多个服务可能有相同的逻辑",
+      "难以维护：业务规则分散，修改困难",
+      "缺乏封装：内部状态通过getter/setter暴露，破坏不变性",
+      "增加测试难度：需要测试服务层而非领域对象"
+    ],
+    "example_anemic": {
+      "language": "Java",
+      "code": "public class Order {\n  private String id;\n  private BigDecimal amount;\n  private String status;\n  // getters and setters\n}\n\npublic class OrderService {\n  public void approveOrder(Order order) {\n    if (order.getAmount().compareTo(BigDecimal.ZERO) <= 0) {\n      throw new IllegalArgumentException(\"Invalid amount\");\n    }\n    if (!\"PENDING\".equals(order.getStatus())) {\n      throw new IllegalStateException(\"Order not pending\");\n    }\n    order.setStatus(\"APPROVED\");\n  }\n}"
+    }
+  },
+  "rich_domain_model": {
+    "definition": "富领域模型是指领域对象既包含数据也包含业务逻辑，对象负责维护自身的一致性",
+    "characteristics": [
+      "领域对象包含业务逻辑",
+      "对象负责维护不变性",
+      "行为丰富",
+      "业务规则集中在对象内部"
+    ],
+    "benefits": [
+      "符合面向对象原则：数据和行为在一起",
+      "避免逻辑重复：业务规则只写一次",
+      "易于维护：修改业务规则只需修改领域对象",
+      "更好的封装：对象控制自己的状态",
+      "易于测试：直接测试领域对象的行为"
+    ],
+    "example_rich": {
+      "language": "Java",
+      "code": "public class Order {\n  private final OrderId id;\n  private final Money amount;\n  private OrderStatus status;\n\n  public Order(OrderId id, Money amount) {\n    this.id = id;\n    this.amount = amount;\n    this.status = OrderStatus.PENDING;\n  }\n\n  public void approve() {\n    if (!status.canTransitionTo(OrderStatus.APPROVED)) {\n      throw new IllegalStateException(\"Cannot approve order in status: \" + status);\n    }\n    this.status = OrderStatus.APPROVED;\n  }\n\n  // amount is immutable, validation done in Money\n}\n\npublic class OrderService {\n  public void approveOrder(Order order) {\n    order.approve(); // 业务逻辑在Order中\n  }\n}"
+    }
+  },
+  "primitive_obsession": {
+    "definition": "原始类型偏执是指过度使用原始类型（int、String等）而非创建有意义的小对象的代码坏味道",
+    "problems": [
+      "缺乏类型安全：String email可以传递给String name参数",
+      "缺乏业务语义：看到String不知道代表什么",
+      "验证逻辑分散：email验证可能在多处重复",
+      "难以重构：修改email格式需要找到所有相关代码",
+      "容易出错：如将zipCode传递给phoneNumber"
+    ],
+    "examples": [
+      "用String表示Email、Phone、ZipCode、URL",
+      "用BigDecimal表示Money（缺少货币信息）",
+      "用int表示Year、Month（缺少验证）",
+      "用String表示ISBN、SSN（缺少格式验证）"
+    ]
+  },
+  "tiny_types_value_objects": {
+    "definition": "Tiny Types（或Value Objects）是封装原始类型的小对象，提供类型安全、验证和业务语义",
+    "characteristics": [
+      "不可变（Immutable）：创建后不可修改",
+      "值相等（Value Equality）：通过值比较而非引用",
+      "自验证（Self-Validating）：构造时验证，保证有效性",
+      "有业务语义：类名表达业务含义"
+    ],
+    "benefits": [
+      "类型安全：编译时发现类型错误",
+      "业务语义清晰：Email、Phone一目了然",
+      "验证集中：验证逻辑只写一次，在构造函数中",
+      "易于重构：修改Email实现不影响使用方",
+      "防止错误：不能将Email传递给Phone参数",
+      "代码即文档：类型本身就是文档"
+    ],
+    "example_primitive": {
+      "language": "Java",
+      "code": "public class User {\n  private String email;\n  private String name;\n  \n  public User(String email, String name) {\n    // 验证逻辑分散\n    if (!email.contains(\"@\")) {\n      throw new IllegalArgumentException(\"Invalid email\");\n    }\n    this.email = email;\n    this.name = name;\n  }\n  \n  // 问题：email和name都是String，容易传错\n  public void sendEmail(String email, String message) { ... }\n}"
+    },
+    "example_value_object": {
+      "language": "Java",
+      "code": "public class Email {\n  private final String value;\n  \n  public Email(String value) {\n    if (!isValid(value)) {\n      throw new IllegalArgumentException(\"Invalid email: \" + value);\n    }\n    this.value = value;\n  }\n  \n  private static boolean isValid(String email) {\n    return email.matches(\"^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$\");\n  }\n  \n  @Override\n  public boolean equals(Object o) {\n    if (this == o) return true;\n    if (o == null || getClass() != o.getClass()) return false;\n    Email email = (Email) o;\n    return value.equals(email.value);\n  }\n  \n  @Override\n  public int hashCode() {\n    return value.hashCode();\n  }\n  \n  @Override\n  public String toString() {\n    return value;\n  }\n}\n\npublic class User {\n  private final Email email;\n  private final String name;\n  \n  public User(Email email, String name) {\n    // 不需要验证email，Email类保证有效性\n    this.email = email;\n    this.name = name;\n  }\n  \n  // 类型安全：不能传错参数\n  public void sendEmail(Email recipient, String message) { ... }\n}"
+    }
+  },
+  "more_examples": [
+    {
+      "type": "Money",
+      "problem": "BigDecimal缺少货币信息",
+      "solution": "Money类包含金额和货币类型，提供货币转换和算术运算",
+      "code_snippet": "public class Money {\n  private final BigDecimal amount;\n  private final Currency currency;\n  \n  public Money add(Money other) {\n    if (!this.currency.equals(other.currency)) {\n      throw new IllegalArgumentException(\"Cannot add different currencies\");\n    }\n    return new Money(this.amount.add(other.amount), this.currency);\n  }\n}"
+    },
+    {
+      "type": "ZipCode",
+      "problem": "String可以是任何值，包括无效的邮编",
+      "solution": "ZipCode类验证格式，确保只能创建有效的邮编",
+      "code_snippet": "public class ZipCode {\n  private final String value;\n  \n  public ZipCode(String value) {\n    if (!value.matches(\"^\\\\d{5}(-\\\\d{4})?$\")) {\n      throw new IllegalArgumentException(\"Invalid ZIP code\");\n    }\n    this.value = value;\n  }\n}"
+    },
+    {
+      "type": "URL",
+      "problem": "String可以是任何文本，不保证是有效的URL",
+      "solution": "URL类解析和验证URL，提供协议、域名、路径等属性",
+      "code_snippet": "public class WebUrl {\n  private final URI uri;\n  \n  public WebUrl(String url) {\n    try {\n      this.uri = new URI(url);\n      if (!uri.getScheme().matches(\"https?\")) {\n        throw new IllegalArgumentException(\"Only HTTP(S) URLs allowed\");\n      }\n    } catch (URISyntaxException e) {\n      throw new IllegalArgumentException(\"Invalid URL: \" + url, e);\n    }\n  }\n  \n  public String getHost() { return uri.getHost(); }\n}"
+    }
+  ],
+  "comparison": {
+    "baseline": "贫血模型 + 原始类型",
+    "metrics": [
+      {
+        "dimension": "类型安全",
+        "traditional": "低（String可以传错）",
+        "smart_domain": "高（编译时检查）",
+        "improvement": "编译时发现错误"
+      },
+      {
+        "dimension": "代码可读性",
+        "traditional": "低（String email含义不明确）",
+        "smart_domain": "高（Email类型一目了然）",
+        "improvement": "显著提升"
+      },
+      {
+        "dimension": "验证逻辑重复",
+        "traditional": "高（多处验证email）",
+        "smart_domain": "无（验证在Email构造函数）",
+        "improvement": "消除重复"
+      },
+      {
+        "dimension": "重构难度",
+        "traditional": "高（需要找到所有使用String的地方）",
+        "smart_domain": "低（只修改Email类）",
+        "improvement": "显著降低"
+      },
+      {
+        "dimension": "业务逻辑位置",
+        "traditional": "分散在服务层",
+        "smart_domain": "集中在领域对象",
+        "improvement": "易于维护"
+      }
+    ]
+  },
+  "when_to_use": {
+    "rich_domain_model": [
+      "业务逻辑复杂",
+      "需要维护对象不变性",
+      "对象有状态转换",
+      "需要封装业务规则"
+    ],
+    "value_objects": [
+      "原始类型有业务含义（Email、Money）",
+      "需要验证（ZipCode、Phone）",
+      "需要类型安全（防止传错参数）",
+      "需要封装复杂逻辑（Money的货币转换）"
+    ]
+  },
+  "tools_and_frameworks": [
+    "Lombok（Java，减少样板代码如equals/hashCode）",
+    "Kotlin Data Classes（内置不可变值对象）",
+    "Python dataclasses（@dataclass装饰器）",
+    "TypeScript（类型系统支持）",
+    "C# Records（C# 9.0+，专为值对象设计）"
+  ],
+  "challenges": [
+    "增加类的数量：每个原始类型都可能成为一个类",
+    "样板代码：equals、hashCode、toString需要手动实现（可用工具缓解）",
+    "性能开销：对象创建比原始类型慢（通常可忽略）",
+    "团队学习曲线：需要理解Value Objects概念",
+    "与框架集成：某些框架可能不支持Value Objects（如ORM）"
+  ],
+  "best_practices": [
+    "Value Objects应该是不可变的",
+    "在构造函数中验证，确保对象总是有效",
+    "实现值相等（equals/hashCode基于值）",
+    "提供有意义的toString",
+    "不要为所有原始类型创建对象，只为有业务含义的",
+    "Rich Domain对象应该隐藏内部状态，通过方法暴露行为"
+  ],
+  "case_studies": [
+    {
+      "organization": "电商平台",
+      "scenario": "将Money从BigDecimal重构为Money类",
+      "outcome": "消除了货币转换错误，代码可读性提升，验证逻辑集中",
+      "lessons": "Value Objects显著提升了金融计算的安全性和可维护性"
+    },
+    {
+      "organization": "社交平台",
+      "scenario": "将Email、Phone从String重构为类型",
+      "outcome": "编译时发现多个参数传递错误，验证逻辑统一",
+      "lessons": "类型安全减少了运行时错误"
+    }
+  ],
+  "recent_trends_2024_2025": [
+    "现代语言（Kotlin、TypeScript）对Value Objects的原生支持",
+    "AI工具帮助识别Primitive Obsession并建议重构",
+    "微服务架构中Value Objects的跨服务共享",
+    "函数式编程风格对不可变对象的强调"
+  ],
+  "references": [
+    "Domain-Driven Design by Eric Evans",
+    "Anemic Domain Model - Martin Fowler",
+    "Refactoring: Improving the Design of Existing Code - Martin Fowler",
+    "Primitive Obsession - Refactoring Guru",
+    "Anemic Domain Model vs. Rich Domain Model - Baeldung",
+    "Design Smell: Primitive Obsession - Mark Seemann",
+    "Value Objects - DDD Community"
+  ]
+}

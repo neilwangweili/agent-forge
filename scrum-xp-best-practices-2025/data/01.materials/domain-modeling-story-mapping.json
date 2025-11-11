@@ -1,0 +1,174 @@
+{
+  "topic": "领域建模与用户故事地图",
+  "definition": "领域建模（Domain Modeling）是识别和表示业务领域核心概念、实体、关系和规则的过程，由Eric Evans在Domain-Driven Design（DDD）中系统化。用户故事地图（User Story Mapping）是由Jeff Patton提出的一种需求分析技术，通过可视化用户旅程来识别和组织用户故事，帮助团队理解产品全貌并确定优先级。两者结合可以实现从业务理解到需求分解的完整流程。",
+  "basic_info": {
+    "domain_modeling_origin": "Eric Evans《Domain-Driven Design》（2003）系统化了领域建模",
+    "story_mapping_origin": "Jeff Patton在2005年左右开始推广，《User Story Mapping》一书出版于2014",
+    "integration": "两种方法在实践中自然融合，Story Mapping可作为DDD的输入"
+  },
+  "core_problem": "传统需求分析面临的痛点：需求文档冗长且难以理解、开发人员和业务专家之间存在认知鸿沟、难以把握产品全貌和优先级、需求与实现之间缺乏可追溯性。领域建模和用户故事地图提供了可视化、协作式的需求分析方法。",
+  "domain_modeling": {
+    "definition": "领域建模是识别业务领域中的核心概念（实体、值对象、聚合）、它们之间的关系以及业务规则的过程",
+    "key_concepts": [
+      {
+        "name": "实体（Entity）",
+        "description": "具有唯一标识的领域对象，如User、Order",
+        "characteristics": "有生命周期，通过ID区分"
+      },
+      {
+        "name": "值对象（Value Object）",
+        "description": "没有唯一标识，通过属性值区分的对象，如Email、Address",
+        "characteristics": "不可变，可替换"
+      },
+      {
+        "name": "聚合（Aggregate）",
+        "description": "一组相关实体和值对象的集合，有聚合根",
+        "characteristics": "维护一致性边界"
+      },
+      {
+        "name": "领域服务（Domain Service）",
+        "description": "不属于特定实体的业务逻辑",
+        "characteristics": "无状态，操作多个实体"
+      },
+      {
+        "name": "通用语言（Ubiquitous Language）",
+        "description": "团队共享的业务术语和概念",
+        "characteristics": "代码中使用相同的业务术语"
+      }
+    ],
+    "benefits": [
+      "缩小业务与技术之间的认知鸿沟",
+      "代码结构反映业务结构，可读性强",
+      "业务规则集中在领域对象中，易维护",
+      "通用语言促进团队沟通",
+      "支持复杂业务逻辑建模"
+    ],
+    "how_to": [
+      "1. 与领域专家进行事件风暴（Event Storming）或领域访谈",
+      "2. 识别核心领域概念和边界上下文",
+      "3. 建立通用语言词汇表",
+      "4. 识别实体、值对象和聚合",
+      "5. 建立领域模型图",
+      "6. 在代码中用通用语言实现领域模型"
+    ]
+  },
+  "user_story_mapping": {
+    "definition": "用户故事地图是一种可视化技术，通过横向展示用户活动流程，纵向展示故事的细节和优先级，帮助团队理解产品全貌",
+    "structure": {
+      "horizontal_axis": "用户旅程（User Journey）：用户使用产品的时间顺序",
+      "vertical_axis": "故事优先级：从必需（MVP）到增强功能",
+      "backbone": "用户活动（User Activities）：高层次的用户目标",
+      "walking_skeleton": "第一个可交付的最小功能集（MVP）"
+    },
+    "benefits": [
+      "可视化产品全貌，避免只见树木不见森林",
+      "从用户视角组织需求，确保用户价值",
+      "清晰的优先级：纵向分层显示MVP和增强功能",
+      "促进团队协作：所有人围绕地图讨论",
+      "便于识别遗漏的功能",
+      "支持增量交付策略"
+    ],
+    "how_to": [
+      "1. 识别用户角色和典型用户旅程",
+      "2. 列出用户活动（横向）：用户为达成目标需要做的高层次任务",
+      "3. 分解每个活动为具体的用户故事（纵向）",
+      "4. 按价值和风险排序故事",
+      "5. 划分发布切片（Release Slices）：每个切片是一个可交付的增量",
+      "6. 确定MVP：第一个可交付的最小功能集",
+      "7. 持续更新地图，反映新的理解和变化"
+    ],
+    "story_format": "As a [角色], I want [功能], So that [价值]",
+    "invest_principle": {
+      "I": "Independent - 独立的",
+      "N": "Negotiable - 可协商的",
+      "V": "Valuable - 有价值的",
+      "E": "Estimable - 可估算的",
+      "S": "Small - 小的",
+      "T": "Testable - 可测试的"
+    }
+  },
+  "integration_of_both": {
+    "description": "领域建模和用户故事地图可以相互增强",
+    "workflow": [
+      "1. 用户故事地图识别用户需求和功能范围",
+      "2. 从用户故事中提取领域概念和业务规则",
+      "3. 进行领域建模，建立领域模型",
+      "4. 领域模型反过来帮助细化和验证用户故事",
+      "5. 用户故事地图引导开发优先级，领域模型指导实现架构"
+    ],
+    "synergy": [
+      "Story Mapping提供业务上下文，DDD提供技术实现指导",
+      "Story Mapping帮助识别边界上下文",
+      "领域模型使故事实现更清晰、更一致",
+      "两者都强调与业务专家的协作",
+      "都支持迭代和演进式开发"
+    ]
+  },
+  "practices": [
+    {
+      "name": "Event Storming",
+      "description": "一种协作式的领域建模技术，团队和领域专家一起识别领域事件",
+      "how_to": "在墙上贴便利贴，橙色表示领域事件，蓝色表示命令，黄色表示聚合"
+    },
+    {
+      "name": "Context Mapping",
+      "description": "识别不同的边界上下文及其之间的关系",
+      "how_to": "画出系统的不同部分和它们之间的集成关系"
+    },
+    {
+      "name": "Story Slicing",
+      "description": "将大的用户故事切分为小的、可独立交付的故事",
+      "how_to": "按照业务价值和技术复杂度进行纵向切分"
+    }
+  ],
+  "tools_and_frameworks": [
+    "Miro / Mural（在线协作白板，用于Story Mapping和Event Storming）",
+    "Jira（用户故事管理）",
+    "Context Mapper（DDD建模工具）",
+    "PlantUML（领域模型图绘制）",
+    "Lucidchart（流程和模型可视化）"
+  ],
+  "case_studies": [
+    {
+      "organization": "电商平台",
+      "scenario": "使用User Story Mapping规划新产品功能",
+      "outcome": "识别出30个用户故事，按优先级分为3个发布切片，第一个MVP在6周内交付",
+      "lessons": "可视化帮助团队理解产品全貌，避免遗漏关键功能"
+    },
+    {
+      "organization": "金融系统",
+      "scenario": "使用DDD和Event Storming进行复杂业务建模",
+      "outcome": "识别出5个边界上下文，建立了清晰的领域模型，代码结构与业务一致",
+      "lessons": "领域建模缩小了业务与技术的鸿沟，提高了代码可维护性"
+    }
+  ],
+  "applicable_scenarios": {
+    "story_mapping_适用": [
+      "需要可视化产品全貌",
+      "团队对需求优先级不清晰",
+      "需要规划MVP和后续版本",
+      "跨职能团队协作"
+    ],
+    "domain_modeling_适用": [
+      "业务逻辑复杂",
+      "需要处理复杂的业务规则",
+      "需要长期维护的系统",
+      "团队与业务专家之间存在认知鸿沟"
+    ]
+  },
+  "recent_trends_2024_2025": [
+    "在线协作工具（Miro、Mural）使远程Story Mapping更容易",
+    "AI辅助生成用户故事和识别领域概念",
+    "DDD与微服务架构的深度结合",
+    "Event Storming在敏捷团队中的普及",
+    "Story Mapping与OKR的结合"
+  ],
+  "references": [
+    "User Story Mapping by Jeff Patton (2014)",
+    "Domain-Driven Design by Eric Evans (2003)",
+    "Combining User Story Mapping with Domain-Driven Design - InfoQ",
+    "Building Better Domain Models With Jeff Patton's User Story Mapping",
+    "Domain-Driven Design: Discovery Methods and Ubiquitous Language (2025)",
+    "Mapping your domain knowledge (blog.eriksen.com.br)"
+  ]
+}

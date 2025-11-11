@@ -1,0 +1,219 @@
+{
+  "topic": "Scrum",
+  "definition": "Scrum是一个轻量级的敏捷项目管理框架，通过迭代和增量的方式交付价值。它基于经验主义（Empiricism）和精益思想（Lean Thinking），强调透明性（Transparency）、检视（Inspection）和适应（Adaptation）三大支柱。Scrum的基本单元是一个小型团队，通常包括一个Product Owner、一个Scrum Master和开发人员。",
+  "basic_info": {
+    "origin": "由Ken Schwaber和Jeff Sutherland在1990年代初期提出",
+    "first_appearance": "1995年OOPSLA会议首次正式介绍",
+    "latest_version": "Scrum Guide 2020版本（最新官方指南）"
+  },
+  "core_problem": "传统瀑布模型面临的核心痛点包括：需求变更困难且成本高昂、反馈周期长导致风险发现延迟、价值交付缓慢无法快速响应市场变化、团队协作效率低下且依赖大量文档驱动。Scrum通过短周期迭代、持续反馈和透明协作来解决这些问题。",
+  "key_principles": [
+    "透明性（Transparency）：工作过程和进度对所有人可见",
+    "检视（Inspection）：定期检查工作成果和过程",
+    "适应（Adaptation）：根据检视结果及时调整策略",
+    "经验主义：基于已知信息和经验做决策",
+    "精益思想：专注于必要工作，减少浪费"
+  ],
+  "roles": [
+    {
+      "name": "Product Owner",
+      "responsibility": "负责最大化产品价值，管理Product Backlog，确保团队工作与业务目标一致"
+    },
+    {
+      "name": "Scrum Master",
+      "responsibility": "负责确保Scrum理论和实践被正确理解和执行，帮助团队和组织采用Scrum"
+    },
+    {
+      "name": "Developers",
+      "responsibility": "负责在每个Sprint中交付符合Definition of Done的可交付增量"
+    }
+  ],
+  "events": [
+    {
+      "name": "Sprint",
+      "duration": "最长一个月的时间盒，包含所有其他事件",
+      "purpose": "为实现Sprint Goal创建可用的增量"
+    },
+    {
+      "name": "Sprint Planning",
+      "duration": "最长8小时（一个月的Sprint）",
+      "purpose": "团队共同决定Sprint Goal和如何实现它"
+    },
+    {
+      "name": "Daily Scrum",
+      "duration": "15分钟",
+      "purpose": "每日检查向Sprint Goal的进展，必要时调整计划"
+    },
+    {
+      "name": "Sprint Review",
+      "duration": "最长4小时（一个月的Sprint）",
+      "purpose": "检查Sprint的成果，讨论未来的改进"
+    },
+    {
+      "name": "Sprint Retrospective",
+      "duration": "最长3小时（一个月的Sprint）",
+      "purpose": "团队反思过程和关系，识别改进机会"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "Product Backlog",
+      "description": "包含开发或增强产品所需的所有内容的有序列表",
+      "commitment": "Product Goal"
+    },
+    {
+      "name": "Sprint Backlog",
+      "description": "为实现Sprint Goal而选择的Product Backlog项和实现计划",
+      "commitment": "Sprint Goal"
+    },
+    {
+      "name": "Increment",
+      "description": "所有已完成的Product Backlog项的总和，必须可用",
+      "commitment": "Definition of Done"
+    }
+  ],
+  "advantages": [
+    "快速迭代：2-4周的Sprint周期相比瀑布模型数月的反馈周期显著缩短了从实现到验证的时间",
+    "拥抱变化：将需求变更的成本从瀑布模型的高成本降低到可接受的水平",
+    "早期风险发现：通过短周期迭代，风险在早期就能被识别和应对",
+    "持续交付价值：每个Sprint都产生可用的增量，提升客户满意度",
+    "透明协作：通过Daily Scrum、Sprint Review等仪式确保团队和利益相关者对进度有清晰认知",
+    "更高成功率：Agile项目成功率42% vs 瀑布模型13%（Standish Group Chaos Report 2020）",
+    "更低失败率：Agile项目失败率11% vs 瀑布模型59%（Standish Group Chaos Report 2020）",
+    "缩短交付时间：Danske Bank报告从14个月缩短到9个月，首次业务交付仅需4个月"
+  ],
+  "comparison": {
+    "baseline": "瀑布模型（Waterfall Model）",
+    "metrics": [
+      {
+        "dimension": "项目成功率",
+        "traditional": "13%",
+        "agile": "42%",
+        "improvement": "3倍提升",
+        "source": "Standish Group Chaos Report 2020"
+      },
+      {
+        "dimension": "项目失败率",
+        "traditional": "59%",
+        "agile": "11%",
+        "improvement": "5倍降低",
+        "source": "Standish Group Chaos Report 2020"
+      },
+      {
+        "dimension": "反馈周期",
+        "traditional": "数月到数年",
+        "agile": "2-4周",
+        "improvement": "10-50倍加速",
+        "source": "Scrum Guide, Industry Practice"
+      },
+      {
+        "dimension": "交付时间",
+        "traditional": "14个月",
+        "agile": "9个月（首次交付4个月）",
+        "improvement": "36%缩短",
+        "source": "Danske Bank Case Study"
+      },
+      {
+        "dimension": "变更成本",
+        "traditional": "高（后期变更成本指数增长）",
+        "agile": "低（每个Sprint都可调整）",
+        "improvement": "显著降低",
+        "source": "Agile Alliance Research"
+      }
+    ]
+  },
+  "practices": [
+    {
+      "name": "Sprint Planning",
+      "description": "团队共同制定Sprint计划，选择Product Backlog项并制定实现计划",
+      "how_to": "1) Product Owner介绍最高优先级的Backlog项 2) 团队讨论并选择本Sprint要完成的项 3) 制定Sprint Goal 4) 制定实现计划"
+    },
+    {
+      "name": "Daily Scrum",
+      "description": "每日15分钟的同步会议，团队检查进度并调整计划",
+      "how_to": "开发人员每天同一时间同一地点召开，讨论昨天做了什么、今天计划做什么、遇到什么障碍"
+    },
+    {
+      "name": "Sprint Review",
+      "description": "Sprint结束时展示完成的工作，获取反馈",
+      "how_to": "团队向利益相关者演示完成的增量，收集反馈，讨论Product Backlog的调整"
+    },
+    {
+      "name": "Sprint Retrospective",
+      "description": "团队反思如何改进流程和协作",
+      "how_to": "团队讨论上个Sprint什么做得好、什么需要改进、下个Sprint如何改进"
+    }
+  ],
+  "case_studies": [
+    {
+      "organization": "Danske Bank",
+      "scenario": "大型银行采用Agile方法论改进软件交付",
+      "outcome": "交付时间从14个月缩短到9个月，首次业务交付仅需4个月",
+      "source": "Why is Agile Time to Market (TTM) Delivery 50% Faster - Delta Matrix"
+    },
+    {
+      "organization": "Akbank",
+      "scenario": "土耳其银行采用'Scrum Army'方法转型敏捷",
+      "outcome": "提高效率和客户满意度",
+      "source": "Agile case studies 2024"
+    },
+    {
+      "organization": "Boa Vista",
+      "scenario": "巴西信用局克服冗长的产品发布周期和繁重的官僚主义",
+      "outcome": "项目执行速度和交付能力显著提升",
+      "source": "Agile case studies 2024"
+    },
+    {
+      "organization": "British Telecom",
+      "scenario": "采用Scrum并转向以反馈为中心的文化",
+      "outcome": "产品质量、速度和客户满意度提升，2024年统计显示更高的项目成功率",
+      "source": "Agile case studies 2024"
+    }
+  ],
+  "tools_and_frameworks": [
+    "Jira（最流行的Scrum项目管理工具）",
+    "Azure DevOps（微软提供的DevOps平台）",
+    "Trello（简单的看板工具）",
+    "Monday.com（团队协作平台）",
+    "Confluence（文档和知识管理）",
+    "Miro（在线协作白板，用于Sprint Planning和Retrospective）"
+  ],
+  "applicable_scenarios": {
+    "team_size": "3-9人的小型跨职能团队最适合，可通过Scrum of Scrums扩展到多团队",
+    "project_characteristics": [
+      "需求不确定或频繁变化",
+      "需要快速响应市场",
+      "复杂的产品开发",
+      "需要持续客户反馈"
+    ],
+    "prerequisites": [
+      "团队成员愿意拥抱变化",
+      "组织支持敏捷文化",
+      "Product Owner有明确的产品愿景",
+      "团队有一定的自组织能力"
+    ]
+  },
+  "challenges": [
+    "文化转型困难：从命令控制转向自组织需要时间",
+    "Scrum Master角色理解偏差：容易被误解为项目经理",
+    "Product Owner能力不足：需要深厚的业务和技术理解",
+    "假Scrum现象：只采用仪式而不理解原则",
+    "规模化挑战：单个Scrum团队容易，多团队协调困难"
+  ],
+  "recent_trends_2024_2025": [
+    "AI辅助Sprint Planning和Backlog管理工具的兴起",
+    "远程和混合工作模式下的Scrum实践优化",
+    "Scrum与DevOps、CI/CD的深度整合",
+    "Evidence-Based Management（EBM）框架的推广",
+    "Scrum认证的价值被质疑，ThoughtWorks Technology Radar指出认证只提供能力的表象"
+  ],
+  "references": [
+    "Scrum Guide 2020 - Ken Schwaber & Jeff Sutherland",
+    "Standish Group Chaos Report 2020",
+    "Scrum.org - Evidence-Based Management",
+    "Atlassian Agile Coach - Scrum Metrics",
+    "ThoughtWorks Technology Radar 2024",
+    "Agile case studies: From successful projects 2024",
+    "Delta Matrix - Why is Agile Time to Market Delivery 50% Faster"
+  ]
+}
