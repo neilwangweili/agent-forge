@@ -6,13 +6,12 @@ Please provide the following information, and the generator will generate your r
 
 **Agent Blueprint Language**:
 ```
-[Please choose the language for agent blueprints (agents/*.md), such as: Chinese, English, Spanish, etc.]
+Chinese
 ```
 
 **Report Output Language**:
 ```
-[Please choose the language for the final report, such as: Chinese, English, Spanish, etc.
-Can be different from agent blueprint language, for example: agents in Chinese, report in English]
+Chinese
 ```
 
 ---
@@ -21,27 +20,40 @@ Can be different from agent blueprint language, for example: agents in Chinese, 
 
 **Project Identifier**:
 ```
-[Please provide a project ID, such as: latin-america-labor-2025]
+claude-skills-executable-knowledge-2025
 ```
 
 **Research Topic and Core Questions**:
 ```
-[Please describe what your research topic is and what the core problem awareness is.
-Suggested 2-5 paragraphs, including:
-- The theme and scope of the research
-- The core questions you want to answer
-- Why this question is important
-]
+本研究探讨 Claude Skills 所体现的"可执行知识"(Executable Knowledge)范式及其对软件本质的重新定义。
+
+核心问题是:当知识变得可执行,软件的边界在哪里?
+
+传统软件范式中,知识与执行是分离的——代码负责执行,文档负责传递知识。但 Claude Skills 展示了一个全新范式:知识本身即是可执行的。用户通过安装 Skill (本质上是一份 Markdown 文档),即可获得处理特定信息的能力。这不是简单的"知识管理",而是知识的物化与能力的传递。
+
+这个问题之所以重要,是因为它触及了 AI 时代软件工程的根本性变革:
+1. 软件的本质从"精确的执行指令"转变为"可被理解与执行的知识"
+2. 开发范式从"指令式编程"转变为"声明式知识定义"
+3. 协作模式从"共享代码仓库"转变为"共享智能体蓝图"
+
+这种变革将重新定义我们对软件、对编程、对知识工作的理解。
 ```
 
 **Preliminary Direction and Insights**:
 ```
-[Please describe your current preliminary thoughts, hypotheses, or insights about this research.
-Can include:
-- Your preliminary judgments or hypotheses
-- Existing background understanding
-- Directions you hope to verify or explore
-]
+本研究的核心洞察来自于对以下现象的观察:
+
+1. **知识的可执行性**:现代知识不再仅仅是"信息"或"说明",而是可以被下载、安装、执行的能力包。Skills 机制体现了这一点——用户将 Skill 安装到用户目录即可获取信息处理能力。
+
+2. **协作的标准化**:当 Skill 被安装在团队工作空间时,团队成员的协作获得了标准化——不是通过制度文档,而是通过可执行的智能体蓝图。这是一种全新的知识共享与协作模式。
+
+3. **信息处理的本质**:一切依赖于信息的工作,本质上都是对知识的处理和再处理。无论是数据分析、报告撰写还是代码审查,都是在对信息施加某种知识变换。Skills 提供了一种封装这种变换的方式。
+
+4. **MAS 与 MAMAS 的协作节点**:多智能体系统 (Multi-Agent System) 和多智能体多架构系统 (Multi-Agent Multi-Architecture System) 中的每一个协作节点,本质上都在表达同样的思想——智能体文档表达的是 Skill 的理念。
+
+5. **软件的终结?**:如果软件的本质是知识,那么传统意义上的"软件"是否还存在?未来的方向是否是 AI 智能体?这是否意味着我们正在经历从"面向对象编程"到"面向提示词编程"的范式转移?
+
+本研究希望验证这些洞察,并探索其对未来软件工程实践的影响。
 ```
 
 ---
@@ -50,56 +62,91 @@ Can include:
 
 **Data Sources**:
 ```
-[Please list the sources from which data needs to be collected. For example:
-- Specific websites (list URLs)
-- Social media of specific organizations
-- Academic literature databases
-- Government public data
-- News media
-- Other data sources
-]
+1. Claude Code 官方文档 (https://code.claude.com/docs/zh-CN/skills)
+2. Anthropic 官方博客和技术文章
+3. Claude Skills 相关技术博客文章(CSDN、知乎、个人技术博客等)
+4. Claude Agent SDK 相关文档
+5. AgentForge 项目中关于声明式多智能体系统的文档 (doc/ 目录下的文章)
+6. 软件工程经典著作中关于知识与代码关系的论述(如《人月神话》《设计模式》等)
+7. 关于提示词工程、AI 编程的学术论文和行业报告
 ```
 
 **Data Collection Objectives**:
 ```
-[Please describe what information needs to be collected and how detailed it should be. For example:
-- What fields/dimensions of information are needed
-- How detailed each record needs to be (summary vs complete)
-- Are there any information points that need special attention
-]
+需要收集以下维度的信息:
+
+1. **Claude Skills 机制解析**:
+   - Skills 的渐进式加载机制 (元数据 → SKILL.md → scripts/references)
+   - Skills 的选择机制 (基于 LLM 理解而非算法路由)
+   - Skills 的三种部署类型 (Personal/Project/Plugin)
+   - Skills 的实际应用案例
+
+2. **可执行知识的理论基础**:
+   - 知识可执行性的概念演进
+   - 声明式编程与知识表达的关系
+   - 智能体蓝图 (Agent Blueprint) 作为可执行知识的体现
+
+3. **多智能体系统的协作机制**:
+   - MAS (Multi-Agent System) 中的知识传递
+   - MAMAS (Multi-Agent Multi-Architecture System) 的协作节点设计
+   - AgentForge 中的声明式架构实践
+
+4. **软件范式的演进**:
+   - 从指令式到声明式的范式转移
+   - "面向提示词编程"的概念
+   - 传统软件工程与 AI 时代软件工程的对比
+
+5. **实践案例与证据**:
+   - Skills 在实际项目中的应用
+   - 团队协作标准化的案例
+   - 知识传递效率的量化对比
+
+收集深度:每个维度需要既有理论阐述,也有实践案例;既有技术细节,也有哲学思考。
 ```
 
 **Data Collection Process Design**:
 ```
-[Please explain if there are any special considerations for the collection process:
-- Is parallel collection of multiple data sources needed?
-- Is multi-stage collection needed (overview first, then deep dive)?
-- Are there time range restrictions?
-- Is deduplication or validation needed?
-If no special requirements, answer "Suggested by AI"
-]
+采用三阶段收集策略:
+
+第一阶段:技术机制理解
+- 深入研读 Claude Skills 官方文档
+- 分析 AgentForge 项目中的声明式架构文章
+- 提取核心技术概念和机制
+
+第二阶段:理论框架构建
+- 搜集软件工程经典著作中的相关论述
+- 查找学术论文中关于知识工程、声明式编程的研究
+- 梳理"可执行知识"概念的理论支撑
+
+第三阶段:实践证据采集
+- 收集 Skills 的实际应用案例
+- 分析多智能体系统的实践经验
+- 整理效率对比数据
+
+这三个阶段可以并行进行,但最终需要交叉验证,确保技术、理论、实践三者相互印证。
 ```
 
 **Data Storage Format**:
 ```
-[Please specify how the collected data should be saved:
-- JSON format (structured data)
-- Markdown documents
-- Raw files (PDF, images, etc.)
-- Other formats
-If no special requirements, answer "Suggested by AI"
-]
+Markdown 格式,按照以下结构组织:
+
+- skills-mechanism.md: Claude Skills 技术机制详解
+- executable-knowledge-theory.md: 可执行知识的理论框架
+- mas-collaboration.md: 多智能体协作机制分析
+- software-paradigm-shift.md: 软件范式演进研究
+- case-studies.md: 实践案例集
+- key-quotes.md: 关键引用和论述摘录
 ```
 
 **Existing Reference Materials**:
 ```
-[Please list reference materials you already have that can be placed in the references directory. For example:
-- Literature review of related research
-- Documentation of data sources
-- Glossary of related concepts
-- Classification systems or standards
-If none at the moment, answer "None"
-]
+AgentForge 项目中已有的参考资料:
+- doc/declarative-multi-agent-architecture-part1-zh.md (声明式多智能体系统架构剖析上篇)
+- doc/declarative-multi-agent-architecture-part2-zh.md (如存在)
+- doc/公众号文章-AgentForge介绍.md
+- generator.md (AgentForge 生成器的架构原则)
+
+这些资料已经阐述了声明式架构、智能体蓝图、知识外化等核心概念,是本研究的重要理论基础。
 ```
 
 ---
@@ -108,37 +155,77 @@ If none at the moment, answer "None"
 
 **Analysis Methods**:
 ```
-[Please describe how you plan to analyze the collected data. For example:
-- Classification and statistics (categorize by certain dimension)
-- Topic extraction (identify key themes and trends)
-- Comparative analysis (comparison across different sources/periods)
-- Relationship discovery (associations between entities)
-- Qualitative analysis (deep reading and understanding)
-- Other methods
+采用多层次分析方法:
 
-If you have an existing analysis method document, please specify the filename and I will have the agent reference it.
-]
+1. **概念提炼分析**:
+   从收集的材料中提炼核心概念,建立概念网络。重点识别:
+   - "可执行知识"的本质特征
+   - "智能体蓝图"与传统代码的根本差异
+   - "声明式"与"指令式"的边界划分
+   - "知识物化"的实现机制
+
+2. **范式对比分析**:
+   建立传统软件工程与 AI 时代软件工程的对比框架:
+   - 开发范式对比 (指令式编程 vs 声明式知识定义)
+   - 协作模式对比 (共享代码仓库 vs 共享智能体蓝图)
+   - 知识传递对比 (文档+培训 vs 可执行 Skill)
+   - 质量保证对比 (测试+审查 vs 标准嵌入+自检)
+
+3. **机制深度分析**:
+   深入分析 Claude Skills 的设计机制:
+   - 为什么采用渐进式加载而非全量加载?
+   - 为什么选择基于 LLM 理解而非算法路由?
+   - 元数据-详细指令-脚本三层架构的设计权衡是什么?
+   - 这种设计如何支撑"可执行知识"的理念?
+
+4. **因果链分析**:
+   构建"技术机制→设计理念→范式转变"的因果链:
+   - Skills 的技术机制如何体现"知识可执行"的理念?
+   - "知识可执行"如何推动软件范式转变?
+   - 范式转变对未来软件工程实践意味着什么?
+
+5. **实践验证分析**:
+   通过实践案例验证理论洞察:
+   - AgentForge 如何体现可执行知识理念?
+   - 团队协作标准化的实际效果如何?
+   - 效率提升的量化证据是什么?
 ```
 
 **Analysis Process Design**:
 ```
-[Please explain if there are any special considerations for the analysis process:
-- Are multiple parallel analysis dimensions needed?
-- Is multi-stage analysis needed (preliminary analysis first, then deep analysis)?
-- Are there dependencies between different analyses?
-If no special requirements, answer "Suggested by AI"
-]
+采用"并行+汇聚"的二阶段分析:
+
+第一阶段 (并行):
+- 概念提炼分析 (独立进行)
+- 范式对比分析 (独立进行)
+- 机制深度分析 (独立进行)
+
+第二阶段 (汇聚):
+- 因果链分析 (整合前三个分析的结果)
+- 实践验证分析 (用实践案例验证因果链)
+
+关键要求:
+- 所有分析必须基于收集的材料,避免臆测
+- 概念提炼必须精准,避免模糊表述
+- 对比分析必须公平,既要看到新范式的优势,也要认识其局限
+- 因果链必须清晰,每个推论都要有证据支撑
 ```
 
 **Analysis Results Storage**:
 ```
-[Please specify how the analysis results should be saved:
-- JSON format (structured analysis results)
-- Markdown documents (analysis reports)
-- Statistical data (tables, chart data)
-- Other formats
-If no special requirements, answer "Suggested by AI"
-]
+Markdown 格式,按照以下结构组织:
+
+- concept-extraction.md: 核心概念提炼与概念网络
+- paradigm-comparison.md: 软件范式对比框架
+- mechanism-analysis.md: Claude Skills 机制深度分析
+- causal-chain.md: 技术-理念-范式的因果链分析
+- practice-validation.md: 实践案例验证报告
+
+每个分析文档都应包含:
+- 分析依据 (引用收集的材料)
+- 分析过程 (推理逻辑)
+- 分析结论 (核心洞察)
+- 未解问题 (需要进一步研究的问题)
 ```
 
 ---
@@ -147,41 +234,114 @@ If no special requirements, answer "Suggested by AI"
 
 **Report Format**:
 ```
-[Please specify the format of the final report:
-- Markdown document (suitable for reading and publishing)
-- JSON data (suitable for further processing)
-- LaTeX academic paper
-- HTML webpage
-- Other formats
-]
+Markdown 文档,适合微信公众号发布
 ```
 
 **Report Structure**:
 ```
-[Please describe what parts the report should contain and what the structure is. For example:
-- Abstract
-- Research background
-- Data source description
-- Analysis findings (divided into several sections?)
-- Conclusion
-- Appendix
+文章采用"引入-展开-升华"三段式结构:
 
-If you want AI to decide the structure based on analysis results, answer "Suggested by AI"
-]
+## 第一部分:引入 (约800字)
+
+**标题候选**:
+- "当知识成为可执行的:Claude Skills 与软件的未来"
+- "下载即执行:重新理解软件的本质"
+- "Skill 不是工具,是可执行的知识"
+
+**开篇**:
+用一个具体场景引入:当你在 Claude Code 中安装一个 Skill 时,你获得的不是一个"工具",而是一种"能力"——这种能力曾经需要通过阅读文档、学习方法、反复实践才能掌握,现在只需下载、安装、执行。
+
+**核心论点**:
+现代知识正在发生本质性变化——从"被阅读的信息"转变为"可执行的能力包"。Claude Skills 不是简单的自动化工具,而是这种转变的典型体现。
+
+## 第二部分:展开 (约2500字)
+
+分为五个子主题,每个子主题约500字:
+
+### 2.1 可执行知识:知识的新形态
+- 传统知识:信息→理解→实践
+- 现代知识:下载→安装→执行
+- Skills 机制如何实现这种转变
+- 实例:一个数据分析 Skill 包含的不是"如何分析"的说明,而是"可被执行的分析能力"
+
+### 2.2 协作标准化:从制度到能力
+- 传统协作:制度文档+培训+监督
+- 新型协作:共享 Skill +自动执行标准
+- 案例:团队安装同一个代码审查 Skill,协作标准自动统一
+- 这不是"工具统一",而是"能力对齐"
+
+### 2.3 信息处理的本质:知识的变换
+- 一切依赖信息的工作都是知识处理
+- Skills 提供了封装知识变换的方式
+- MAS 和 MAMAS 中的协作节点本质上都是 Skill
+- 智能体蓝图 (Agent Blueprint) 就是 Skill 的理念体现
+
+### 2.4 从代码到知识:范式的转移
+- 传统软件:精确的执行指令
+- AI 时代软件:可被理解与执行的知识
+- 对比:
+  - 开发:写代码 vs 定义知识
+  - 调试:修复 bug vs 调整标准
+  - 维护:重构代码 vs 更新知识
+  - 协作:共享仓库 vs 共享蓝图
+
+### 2.5 软件的终结?
+- 如果软件本质是知识,传统"软件"还存在吗?
+- 未来方向:AI 智能体取代传统软件
+- 从"面向对象"到"面向提示词"的演进
+- 但这不是技术的简单替换,而是思维方式的根本转变
+
+## 第三部分:升华 (约700字)
+
+**回顾与提升**:
+重新审视"软件工程"的本质——从来都不是关于"编写代码",而是关于"组织知识"。只是在过去,我们只能用代码这种形式来组织知识。AI 时代,知识有了新的载体和新的执行方式。
+
+**对读者的启发**:
+这不仅仅是技术趋势,更是认知转变:
+- 对开发者:重新理解你的工作——你在创造可执行的知识,而非编写代码
+- 对团队管理者:重新理解协作——标准化不是靠制度,而是靠共享可执行的知识
+- 对所有知识工作者:重新理解你的能力——未来的能力获取方式可能是"下载"而非"学习"
+
+**结尾**:
+留一个开放性问题:"当知识变得可执行,学习的意义是什么?"暗示这个转变带来的不仅是工作方式的改变,更可能是教育、成长、价值创造方式的根本性改变。
+
+---
+
+**关键要求**:
+1. 每个论点必须有具体案例或技术细节支撑,避免空泛
+2. 技术术语首次出现时要简要解释
+3. 保持哲学思考与技术细节的平衡
+4. 语言要生动,避免学术论文式的枯燥
+5. 适当使用类比和对比,帮助读者理解抽象概念
 ```
 
 **Writing Style**:
 ```
-[Please describe the writing style of the report. For example:
-- Academic paper style (formal, objective, with citations)
-- Policy brief style (concise, highlights key points, for decision-makers)
-- News report style (narrative, easy to read)
-- Technical documentation style (detailed, precise, with examples)
-- Other styles
+采用"技术深度+哲学洞察+实践启发"的融合风格:
 
-If you have a reference document for style analysis, please specify the filename (place in references/),
-and I will have the Reporter agent reference it.
-]
+**语言风格**:
+- 使用标准中文,技术术语保留英文原文(如 Skills, Agent Blueprint)
+- 避免过于学术化的表述,但保持思考深度
+- 多用短句,保持节奏感
+- 适度使用类比和隐喻,但要准确
+
+**论述风格**:
+- 先具体后抽象:先举例或描述机制,再提炼概念
+- 先现象后本质:先观察到什么,再分析为什么
+- 保持批判性:既要展现新范式的价值,也要指出其局限和边界
+
+**参考标准**:
+- 技术深度参考:AgentForge 的声明式架构文章 (doc/declarative-multi-agent-architecture-part1-zh.md)
+- 哲学洞察参考:Paul Graham 的技术随笔风格
+- 实践启发参考:《人月神话》式的反思性论述
+
+**读者定位**:
+目标读者是对技术有基本了解、关注 AI 发展、思考未来软件工程方向的程序员、架构师和技术管理者。他们不需要手把手的教程,而需要深度的洞察和启发。
+
+**核心写作原则**:
+- 不只是介绍 Claude Skills,而是通过 Skills 透视软件本质的变化
+- 不只是讲"是什么",更要讲"为什么"和"意味着什么"
+- 不只是技术文章,更是关于未来的思考
 ```
 
 ---
@@ -189,11 +349,34 @@ and I will have the Reporter agent reference it.
 ## Other Ideas and Additional Notes
 
 ```
-[If you have any other ideas, special requirements, or things you want the generator to pay attention to, feel free to express them here.
-For example:
-- Special technical constraints
-- Expectations for how the system runs
-- Points you want to emphasize
-- Anything else that comes to mind
-]
+**核心定位**:
+这篇文章的核心价值不是"介绍一个新功能",而是"透过现象看本质"——通过 Claude Skills 这个具体的技术实现,揭示 AI 时代软件本质的深层变化。
+
+**关键洞察**:
+1. Skills 不是"工具",而是"可执行的知识"——这是对知识形态的重新定义
+2. 多智能体系统中的协作节点本质上都是 Skills 理念的体现——这揭示了 MAS/MAMAS 架构的深层逻辑
+3. 从"面向对象"到"面向提示词"不是术语的变化,而是思维方式的根本转变——这是范式转移
+4. 软件的本质是知识,代码只是知识的一种载体——AI 时代我们有了新的载体
+
+**避免的陷阱**:
+- 不要写成"Claude Skills 使用教程"——技术细节只是支撑论点的证据
+- 不要写成"AI 替代程序员"的论调——重点是范式转变,而非替代
+- 不要过度乐观或悲观——保持客观,既看到价值也认识局限
+- 不要堆砌术语——每个术语都必须有明确定义和实例说明
+
+**写作目标**:
+读完这篇文章,读者应该:
+1. 理解 Skills 机制的本质(可执行知识)
+2. 认识到这种机制背后的范式转变
+3. 开始思考这种转变对自己工作的影响
+4. 产生探索和实践的兴趣
+
+**特别强调**:
+这是一篇"思考性文章",而非"科普性文章"。目标不是让所有人都理解,而是让那些已经在思考 AI 对软件工程影响的人获得新的视角和洞察。
+
+**参考已有素材**:
+AgentForge 项目中已有大量关于声明式架构、智能体蓝图、知识外化的深度思考,这些思考应该被整合到文章中,形成从 Skills 到 Agent Blueprint,从单一智能体到多智能体系统的完整视角。
+
+**最终检验标准**:
+文章完成后,应该能回答这个问题:"如果软件的本质是知识,那么 AI 时代的软件工程师到底在做什么?"
 ```
